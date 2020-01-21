@@ -25,7 +25,9 @@
 }
 
 main {
-    max-width: 1140px;
+    .container {
+        max-width: 1140px;
+    }
 
     .product_area_inner {
         border-color: #000000!important;
