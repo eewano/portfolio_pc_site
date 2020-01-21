@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+.header_area {
+    max-width: 1140px;
+
+    .header_logo_area {
+        background-color: #84e2ff;
+    }
+
+    .header_list_area {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                width: 50%;
+
+                @media screen and (min-width: 768px) {
+                    width: 25%;
+                }
+
+            }
+        }
+    }
+}
+
+main {
+    max-width: 1140px;
+
+    .product_area_inner {
+        border-color: #000000!important;
+    }
+
+    .constitution_area_inner {
+        background-color: #dddddd;
+        border-radius: 10px;
+    }
+
+    .product_review {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+}
+
+footer {
+    .container {
+        max-width: 1140px;
+    }
+
+    .footer_link {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                width: 50%;
+
+                @media screen and (min-width: 768px) {
+                    width: 25%;
+                }
+            }
+        }
+    }
+}
