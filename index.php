@@ -25,7 +25,7 @@
                             <a href="" class="nav-link text-dark">トップページ</a>
                         </li>
                         <li class="list-inline-item mx-0 text-center">
-                            <a href="" class="nav-link text-dark">管理者画面</a>
+                            <a href="admin_login.php" class="nav-link text-dark">管理者画面</a>
                         </li>
                         <li class="list-inline-item mx-0 text-center">
                             <a href="" class="nav-link text-dark">登録ユーザー</a>
