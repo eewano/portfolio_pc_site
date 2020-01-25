@@ -10,6 +10,28 @@
 </head>
 <body>
 
+<?php
+
+try {
+    $dsn = 'mysql:dbname=portfolio_pc_shop; host=localhost; charset=utf8';
+    $user = '';
+    $password = '';
+    $dbh = new PDO($dsn, $user, $password);
+    $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $sql = 'SELECT id, image, name, price, evaluation, detail FROM shop_product WHERE 1';
+    $stmt = $dbh -> prepare($sql);
+    $stmt -> execute();
+
+    $dbh = null;
+
+} catch (Exception $e) {
+    header('Location: ../../site_err.php');
+	exit();
+}
+
+?>
+
     <header>
         <div class="container header_area">
             <div class="row">
@@ -50,33 +72,19 @@
                 </div>
 
                 <h3 class="col-12 my-5 text-center">商品一覧</h3>
-                <div class="product_area col-12 col-sm-6 col-lg-4">
-                    <div class="product_area_inner border mb-4 px-3 py-3">
-                        <img src="img/gamepad01_01.jpg" class="img-fluid" alt="">
-                        <p class="product_name pt-3">ワイヤレス 高感度ゲームパッド</p>
-                        <p class="product_price mb-0 text-danger font-weight-bold">¥4,980</p>
-                        <p class="evaluation text-warning">★★★★★☆☆</p>
-                        <p class="product_review">ABC社製の高感度ゲームパッド。USB無線によって遊べる範囲は最大10m。高感度センサー搭載に...</p>
+                <?php while (true) {; ?>
+                <?php $rec = $stmt -> fetch(PDO::FETCH_ASSOC); ?>
+                 <?php if ($rec == false) { break; }; ?>
+                    <div class="product_area col-12 col-sm-6 col-lg-4">
+                        <div class="product_area_inner border mb-4 px-3 py-3">
+                            <img src="/img/<?php echo $rec['image']; ?>" class="img-fluid" alt="">
+                            <p class="product_name pt-3"><?php echo $rec['name']; ?></p>
+                            <p class="product_price mb-0 text-danger font-weight-bold">¥<?php echo $rec['price']; ?></p>
+                            <p class="evaluation text-warning"><?php echo $rec['evaluation']; ?></p>
+                            <p class="product_review"><?php echo $rec['detail']; ?></p>
+                        </div>
                     </div>
-                </div>
-                <div class="product_area col-12 col-sm-6 col-lg-4">
-                    <div class="product_area_inner border mb-4 px-3 py-3">
-                        <img src="img/keyboard01_01.jpg" class="img-fluid" alt="">
-                        <p class="product_name pt-3">A軸 カラフルキーボード</p>
-                        <p class="product_price mb-0 text-danger font-weight-bold">¥7,980</p>
-                        <p class="evaluation text-warning">★★★★★★★</p>
-                        <p class="product_review">キーボードメーカーとして有名なEFG社が誇るA軸タイプの多色キーボード。目視のしやすさと...</p>
-                    </div>
-                </div>
-                <div class="product_area col-12 col-sm-6 col-lg-4">
-                    <div class="product_area_inner border mb-4 px-3 py-3">
-                        <img src="img/mouse01_01.jpg" class="img-fluid" alt="">
-                        <p class="product_name pt-3">高耐久ワイヤレスマウス</p>
-                        <p class="product_price mb-0 text-danger font-weight-bold">¥2,980</p>
-                        <p class="evaluation text-warning">★★★★★★☆</p>
-                        <p class="product_review">HIJ社製の定番ワイヤレスマウス。様々なOSで安定して動作し、単4乾電池1本で驚きの動作時間を...</p>
-                    </div>
-                </div>
+                <?php }; ?>
 
                 <h3 class="col-12 my-5 text-center">当サイトの構成</h3>
                 <div class="constitution_area col-12 col-sm-6">
