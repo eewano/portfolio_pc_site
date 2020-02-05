@@ -68,7 +68,6 @@ $product_detail = $post['product_detail'];
                     <p>商品の詳細：<?php echo h01($product_detail); ?></p>
                 </div>
                 <div class="register_area col-12">
-                    <h1><?php echo $product_image; ?></h1>
                     <form action="admin_product_add_done.php" method="post">
                         <input type="hidden" name="product_image" value="<?php echo $product_image; ?>">
                         <input type="hidden" name="product_name" value="<?php echo h01($product_name); ?>">
