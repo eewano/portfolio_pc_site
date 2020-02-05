@@ -52,7 +52,7 @@ try {
     $dbh = null;
 
 } catch (Exception $e) {
-    // header('Location: ../../site_err.php');
+    header('Location: ../../site_err.php');
 	exit();
 }
 
