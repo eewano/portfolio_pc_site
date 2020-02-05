@@ -1,6 +1,7 @@
 <?php
 
 require_once('../../method_php/method.php');
+require_once('../../method_php/get_user_pass.php');
 
 session_start();
 session_regenerate_id(true);
@@ -35,8 +36,8 @@ try {
     $product_detail = $post['product_detail'];
 
     $dsn = 'mysql:dbname=portfolio_pc_shop; host=localhost; charset=utf8';
-    $user = '';
-    $password = '';
+    $user = getDBUser();
+    $password = getDBPass();
     $dbh = new PDO($dsn, $user, $password);
     $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

@@ -13,9 +13,11 @@
 <?php
 
 try {
+    require_once('method_php/get_user_pass.php');
+
     $dsn = 'mysql:dbname=portfolio_pc_shop; host=localhost; charset=utf8';
-    $user = '';
-    $password = '';
+    $user = getDBUser();
+    $password = getDBPass();
     $dbh = new PDO($dsn, $user, $password);
     $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -74,7 +76,7 @@ try {
                 <h3 class="col-12 my-5 text-center">商品一覧</h3>
                 <?php while (true) {; ?>
                 <?php $rec = $stmt -> fetch(PDO::FETCH_ASSOC); ?>
-                 <?php if ($rec == false) { break; }; ?>
+                <?php if ($rec == false) { break; }; ?>
                     <div class="product_area col-12 col-sm-6 col-lg-4">
                         <div class="product_area_inner border mb-4 px-3 py-3">
                             <img src="/img/<?php echo $rec['image']; ?>" class="img-fluid" alt="">
