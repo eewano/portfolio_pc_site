@@ -27,11 +27,13 @@ $admin_name = $_SESSION['admin_name'];
 
 $post = sanitize($_POST);
 
-$product_image = $_FILES['product_image']['name'];
+$product_image = $_FILES['product_image'];
 $product_name = $post['product_name'];
 $product_price = $post['product_price'];
 $product_evaluation = $post['product_evaluation'];
 $product_detail = $post['product_detail'];
+
+print $product_image['name'] . '<br>';
 
 ?>
 
@@ -60,8 +62,8 @@ $product_detail = $post['product_detail'];
                 </div>
                 <h3 class="col-12 text-center">以下の商品を追加しますか？</h3>
                 <div class="product_decide col-12">
-                    <?php move_uploaded_file($_FILES['product_image']['tmp_name'], '../../img/' . $product_image); ?>
-                    <img src="/img/<?php echo $product_image; ?>" class="img-fluid" alt="">
+                    <?php move_uploaded_file($product_image['tmp_name'], '../../img/' . $product_image['name']); ?>
+                    <img src="/img/<?php echo h01($product_image['name']); ?>" class="img-fluid" alt="">
                     <p>商品名：<?php echo h01($product_name); ?></p>
                     <p>価格：<?php echo h01($product_price); ?></p>
                     <p>評価：<?php echo h01($product_evaluation); ?></p>
@@ -69,7 +71,7 @@ $product_detail = $post['product_detail'];
                 </div>
                 <div class="register_area col-12">
                     <form action="admin_product_add_done.php" method="post">
-                        <input type="hidden" name="product_image" value="<?php echo $product_image; ?>">
+                        <input type="hidden" name="product_image" value="<?php echo h01($product_image['name']); ?>">
                         <input type="hidden" name="product_name" value="<?php echo h01($product_name); ?>">
                         <input type="hidden" name="product_price" value="<?php echo h01($product_price); ?>">
                         <input type="hidden" name="product_evaluation" value="<?php echo h01($product_evaluation); ?>">
