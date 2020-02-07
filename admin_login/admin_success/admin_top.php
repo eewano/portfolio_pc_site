@@ -78,7 +78,11 @@ try {
                 <?php endif; ?>
                     <div class="pruduct_area col-12 col-sm-6 col-lg-4">
                         <div class="product_area_inner border mb-4 px-3 py-3">
+                            <?php if ($rec['image'] == ''): ?>
+                            <img src="/img/no_image.png" class="img-fluid" alt="">
+                            <?php else: ?>
                             <img src="/img/<?php echo $rec['image']; ?>" class="img-fluid" alt="">
+                            <?php endif; ?>
                             <p class="product_name pt-3"><?php echo $rec['name']; ?></p>
                             <p class="product_price mb-0 text-danger font-weight-bold"><?php echo $rec['price']; ?></p>
                             <p class="evaluation text-warning"><?php echo $rec['evaluation']; ?></p>
