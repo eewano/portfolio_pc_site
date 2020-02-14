@@ -1,0 +1,93 @@
+body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1140px) [mainEnd] minmax(20px, 1fr) [right];
+      grid-template-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1140px) [mainEnd] minmax(20px, 1fr) [right];
+  -ms-grid-rows: [head] auto [head] auto [img] auto [title] auto [main] auto [foot] auto [bottom];
+      grid-template-rows: [head] auto [head] auto [img] auto [title] auto [main] auto [foot] auto [bottom];
+}
+
+.footer_area {
+  -ms-grid-column: left;
+      grid-column-start: left;
+  grid-column-end: right;
+  -ms-grid-row: foot;
+      grid-row-start: foot;
+  max-width: 1140px;
+  background-color: #84e2ff;
+}
+
+.footer_area .footer_layout {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+}
+
+@media screen and (max-width: 750px) {
+  .footer_area .footer_layout {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.footer_area .footer_layout h1 {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 40px;
+  font-weight: 800;
+  -webkit-text-stroke: 2px #ffffff;
+  margin-top: 40px;
+  letter-spacing: -4px;
+  text-align: center;
+  margin-left: 40px;
+}
+
+@media screen and (max-width: 750px) {
+  .footer_area .footer_layout h1 {
+    -ms-grid-column-align: stretch;
+        justify-self: stretch;
+    margin-left: 0;
+  }
+}
+
+.footer_area .footer_layout .portfolio_site {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 40px;
+  margin-right: 40px;
+}
+
+@media screen and (max-width: 750px) {
+  .footer_area .footer_layout .portfolio_site {
+    -ms-grid-column-align: stretch;
+        justify-self: stretch;
+    margin-right: 0;
+  }
+}
+
+.footer_area .copyright {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 1140px) {
+  .footer_area {
+    -ms-grid-column: mainStart;
+        grid-column-start: mainStart;
+    grid-column-end: mainEnd;
+  }
+}
+/*# sourceMappingURL=footer.css.map */
