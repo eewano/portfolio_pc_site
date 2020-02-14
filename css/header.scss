@@ -111,6 +111,7 @@ button {
     img {
         width: 100%;
         height: auto;
+        vertical-align: bottom;
     }
 
     @include mq(xg) {

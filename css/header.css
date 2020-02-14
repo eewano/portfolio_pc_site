@@ -3,8 +3,8 @@ body {
   display: grid;
   -ms-grid-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1140px) [mainEnd] minmax(20px, 1fr) [right];
       grid-template-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1140px) [mainEnd] minmax(20px, 1fr) [right];
-  -ms-grid-rows: [head] auto [head] auto [img] auto [title] auto [main] auto [foot] auto [bottom];
-      grid-template-rows: [head] auto [head] auto [img] auto [title] auto [main] auto [foot] auto [bottom];
+  -ms-grid-rows: [head] auto [head] auto [img] auto [admin] auto [title] auto [main] auto [foot] auto [bottom];
+      grid-template-rows: [head] auto [head] auto [img] auto [admin] auto [title] auto [main] auto [foot] auto [bottom];
 }
 
 .header_area {
@@ -152,6 +152,7 @@ button img {
 .top_image_area img {
   width: 100%;
   height: auto;
+  vertical-align: bottom;
 }
 
 @media screen and (min-width: 1140px) {
