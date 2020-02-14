@@ -1,0 +1,49 @@
+body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1140px) [mainEnd] minmax(20px, 1fr) [right];
+      grid-template-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1140px) [mainEnd] minmax(20px, 1fr) [right];
+  -ms-grid-rows: [head] auto [head] auto [img] auto [title] auto [main] auto [foot] auto [bottom];
+      grid-template-rows: [head] auto [head] auto [img] auto [title] auto [main] auto [foot] auto [bottom];
+}
+
+.title_area {
+  -ms-grid-column: mainStart;
+      grid-column-start: mainStart;
+  grid-column-end: mainEnd;
+  -ms-grid-row: main;
+      grid-row-start: main;
+  max-width: 1140px;
+}
+
+.title_area h3 {
+  color: #ff0000;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.title_area p {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.title_area .btn_link {
+  display: block;
+  max-width: 280px;
+  color: #ffffff;
+  background-color: #444444;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+/*# sourceMappingURL=error_page.css.map */
