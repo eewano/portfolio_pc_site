@@ -15,6 +15,7 @@ body {
       grid-row-start: head;
   height: 80px;
   background-color: #84e2ff;
+  border: 2px solid #000000;
 }
 
 @media screen and (max-width: 750px) {
