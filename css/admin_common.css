@@ -24,7 +24,8 @@ body {
           justify-content: center;
   background-color: #ff6b00;
   height: 60px;
-  border: 2px solid #000000;
+  border: solid #000000;
+  border-width: 0px 2px 2px 2px;
 }
 
 @media screen and (min-width: 1140px) {
@@ -310,6 +311,7 @@ main .register_area .button_area .btn_link {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
   color: #ffffff;
   background-color: #444444;
   font-size: 18px;
@@ -335,7 +337,7 @@ main .register_area .button_area .btn_link.register {
 
 main .register_area .btn_link, main .register_area .return_to_top {
   display: block;
-  max-width: 280px;
+  width: 100%;
   color: #ffffff;
   background-color: #444444;
   font-size: 18px;

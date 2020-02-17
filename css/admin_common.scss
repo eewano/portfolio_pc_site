@@ -12,7 +12,8 @@
     justify-content: center;
     background-color: #ff6b00;
     height: 60px;
-    border: 2px solid #000000;
+    border: solid #000000;
+    border-width: 0px 2px 2px 2px;
 
     @include mq(xg) {
         grid-column-start: mainStart;
@@ -253,6 +254,7 @@ main {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                width: 100%;
                 color: #ffffff;
                 background-color: #444444;
                 font-size: 18px;
@@ -279,7 +281,7 @@ main {
 
         .btn_link, .return_to_top {
             display: block;
-            max-width: 280px;
+            width: 100%;
             color: #ffffff;
             background-color: #444444;
             font-size: 18px;

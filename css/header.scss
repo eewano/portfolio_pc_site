@@ -108,6 +108,8 @@ button {
     grid-column-start: left;
     grid-column-end: right;
     grid-row-start: img;
+    border: solid #000000;
+    border-width: 0px 2px 2px 2px;
 
     img {
         width: 100%;

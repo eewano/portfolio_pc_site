@@ -148,6 +148,8 @@ button img {
   grid-column-end: right;
   -ms-grid-row: img;
       grid-row-start: img;
+  border: solid #000000;
+  border-width: 0px 2px 2px 2px;
 }
 
 .top_image_area img {
