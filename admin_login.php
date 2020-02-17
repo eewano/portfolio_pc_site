@@ -44,9 +44,9 @@
     <main>
         <form action="/administrator/admin_login_check.php" method="post" class="input_area">
             <p>管理者名</p>
-            <input type="text" name="admin_name" class="input_space">
+            <input type="text" name="admin_name" class="input_space" style="width: 100%">
             <p>パスワード</p>
-            <input type="password" name="admin_pass" class="input_space">
+            <input type="password" name="admin_pass" class="input_space" style="width: 100%">
             <div class="button_area">
                 <input type="submit" class="btn_link register" value="ログイン">
                 <a href="/index.php" class="btn_link return">トップに戻る</a>
