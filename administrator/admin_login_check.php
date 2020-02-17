@@ -31,7 +31,7 @@ try {
         $_SESSION['admin_login'] = 1;
         $_SESSION['admin_id'] = $admin_id;
         $_SESSION['admin_name'] = $admin_name;
-        header('Location: ./admin_success/admin_top.php');
+        header('Location: ./admin_top.php');
         exit();
 
     } else {
