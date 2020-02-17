@@ -57,7 +57,7 @@ $admin_name = $_SESSION['admin_name'];
     </div>
 
     <main>
-        <form action="admin_product_add_check.php" method="post" enctype="multipart/form-data" class="input_area">
+        <form action="admin_product_add_register.php" method="post" enctype="multipart/form-data" class="input_area">
             <p style="margin-bottom: 10px; width: 100%;">商品画像</p>
             <input type="file" name="product_image">
             <p>商品名</p>
