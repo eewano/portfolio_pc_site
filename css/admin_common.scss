@@ -55,7 +55,7 @@ main {
 
     .product_area {
         display: grid;
-        grid-template-columns:1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto;
         grid-column-gap: 20px;
         grid-row-gap: 20px;
@@ -104,7 +104,7 @@ main {
     
             .button_area {
                 display: grid;
-                grid-template-columns:1fr 1fr;
+                grid-template-columns: 1fr 1fr;
                 grid-template-rows: auto;
                 grid-column-gap: 20px;
     
@@ -176,7 +176,7 @@ main {
     
         .button_area {
             display: grid;
-            grid-template-columns:1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             grid-template-rows: auto;
             grid-column-gap: 20px;
 
@@ -247,7 +247,7 @@ main {
     
         .button_area {
             display: grid;
-            grid-template-columns:1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             grid-template-rows: auto;
             grid-column-gap: 20px;
 
