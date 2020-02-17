@@ -61,8 +61,8 @@ try {
 
     <div class="menu_area">
         <ul>
-            <li><a href="admin_product_add.php">商品の追加</a></li>
-            <li><a href="admin_logout.php">ログアウト</a></li>
+            <li><a href="./admin_product_add.php">商品の追加</a></li>
+            <li><a href="./admin_logout.php">ログアウト</a></li>
         </ul>
     </div>
 
