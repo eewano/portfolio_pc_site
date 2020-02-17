@@ -36,8 +36,6 @@ $product_price = $post['product_price'];
 $product_evaluation = $post['product_evaluation'];
 $product_detail = $post['product_detail'];
 
-print $product_image['name'] . '<br>';
-
 ?>
 
     <header>
