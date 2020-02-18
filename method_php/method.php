@@ -39,7 +39,7 @@ function sanitize($before) {
 
 function admin_login_register($admin_login) {
     if (isset($admin_login) == false) {
-        print 'ログインされていません。<br>';
+        header('Location: /index.php');
         exit();
     }
 }
