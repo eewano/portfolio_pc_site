@@ -335,6 +335,10 @@ main .register_area .button_area .btn_link.register {
   background-color: #0000ff;
 }
 
+main .register_area .button_area .btn_link.delete {
+  background-color: #ff0000;
+}
+
 main .register_area .btn_link, main .register_area .return_to_top {
   display: block;
   width: 100%;

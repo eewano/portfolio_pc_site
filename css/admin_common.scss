@@ -276,6 +276,10 @@ main {
                 &.register {
                     background-color: #0000ff;
                 }
+
+                &.delete {
+                    background-color: #ff0000;
+                }
             }
         }
 
