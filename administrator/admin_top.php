@@ -94,9 +94,9 @@ try {
         <?php endif; ?>
             <div class="product_box">
             <?php if ($rec['image'] == ''): ?>
-                <img src="../img/no_image.png" alt="" class="product_image">
+                <img src="../img/no_image.png" alt="">
             <?php else: ?>
-                <img src="../img/<?php echo $rec['image']; ?>" alt="" class="product_image">
+                <img src="../img/<?php echo $rec['image']; ?>" alt="">
             <?php endif; ?>
                 <p class="product_name"><?php echo h01($rec['name']); ?></p>
                 <p class="product_price">¥ <?php echo h_price($rec['price']); ?></p>

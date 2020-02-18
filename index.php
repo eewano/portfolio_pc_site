@@ -82,7 +82,7 @@ try {
         <?php endif; ?>
             <a href="#" class="product_box">
             <?php if ($rec['image'] == ''): ?>
-                <img src="img/no_image.png" alt="" class="product_image">
+                <img src="img/no_image.png" alt="">
             <?php else: ?>
                 <img src="img/<?php echo $rec['image']; ?>" alt="">
             <?php endif; ?>

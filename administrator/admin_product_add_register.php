@@ -99,11 +99,11 @@ if ($okFlag == false) {
     <main>
         <div class="register_area">
             <div class="product_box">
-            <?php if ($product_image['size'] > 0): ?>
-            <?php move_uploaded_file($product_image['tmp_name'], '../img/' . $product_image['name']); ?>
-                <img src="../img/<?php echo h01($product_image['name']); ?>" alt="" class="product_image">
+            <?php if ($product_image['name'] == ''): ?>
+                <img src="../img/no_image.png" alt="">
             <?php else: ?>
-                <img src="../img/no_image.png" alt="" class="product_image">
+                <?php move_uploaded_file($product_image['tmp_name'], '../img/' . $product_image['name']); ?>
+                <img src="../img/<?php echo h01($product_image['name']); ?>" alt="">
             <?php endif; ?>
                 <p class="product_name"><?php echo h01($product_name); ?></p>
                 <p class="product_price">¥ <?php echo h_price($product_price); ?></p>

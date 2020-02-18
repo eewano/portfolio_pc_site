@@ -95,7 +95,11 @@ try {
     <main>
         <div class="register_area">
             <div class="product_box">
-                <img src="../img/<?php echo h01($product_image); ?>" alt="" class="product_image">
+            <?php if ($product_image['name'] == ''): ?>
+                <img src="../img/no_image.png" alt="">
+            <?php else: ?>
+                <img src="../img/<?php echo h01($product_image); ?>" alt="">
+            <?php endif; ?>
                 <p class="product_name"><?php echo h01($product_name); ?></p>
                 <p class="product_price">¥ <?php echo h_price($product_price); ?></p>
                 <p class="product_evaluation"><?php echo h_evaluation($product_evaluation); ?></p>
