@@ -97,8 +97,8 @@ try {
             <div class="product_box">
                 <img src="../img/<?php echo h01($product_image); ?>" alt="" class="product_image">
                 <p class="product_name"><?php echo h01($product_name); ?></p>
-                <p class="product_price">¥ <?php echo h02($product_price); ?></p>
-                <p class="product_evaluation"><?php echo h01($product_evaluation); ?></p>
+                <p class="product_price">¥ <?php echo h_price($product_price); ?></p>
+                <p class="product_evaluation"><?php echo h_evaluation($product_evaluation); ?></p>
                 <p class="product_review"><?php echo h01($product_detail); ?></p>
             </div>
             <a href="admin_top.php" class="btn_link return_to_top">管理者トップに戻る</a>
