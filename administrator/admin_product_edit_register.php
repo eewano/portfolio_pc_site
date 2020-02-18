@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../method_php/method.php');
+require_once('../method_php/method.php');
 
 session_start();
 session_regenerate_id(true);
@@ -9,21 +9,7 @@ admin_login_register($_SESSION['admin_login']);
 
 $admin_name = $_SESSION['admin_name'];
 
-?>
 
-<!DOCTYPE html>
-<html lang="ja">
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>管理者ページ</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/custom_css/index.css">
-</head>
-<body>
-
-<?php
 
 $post = sanitize($_POST);
 
@@ -35,101 +21,122 @@ $product_price = $post['product_price'];
 $product_evaluation = $post['product_evaluation'];
 $product_detail = $post['product_detail'];
 
+$okFlag = true;
+
+if ($product_image['size'] > 0) {
+    if ($product_image['size'] > 1000000) {
+        $okFlag = false;
+    }
+}
+
+if ($product_name == '') {
+    $okFlag = false;
+}
+
+if (preg_match('/^[0-9]+$/', $product_price) == 0) {
+    $okFlag = false;
+}
+
+if (preg_match('/^([1-7]{1})$/', $product_evaluation) == 0) {
+    $okFlag = false;
+}
+
+if ($product_detail == '') {
+    $okFlag = false;
+}
+
+if ($okFlag == false) {
+    header("location: javascript://history.go(-1)");
+    exit();
+}
+
 ?>
 
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio PC Site</title>
+    <link rel="stylesheet" href="../css/ress.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/admin_common.css">
+</head>
+<body>
+
     <header>
-        <div class="container header_area">
-            <div class="row">
-                <div class="header_logo col-12">
-                    <div class="header_logo_area mx-auto my-4 px-4 py-4 text-center text-dark">
-                        <p class="h1 font-weight-bold">PC SHOP</p>
-                        <p class="h2 font-weight-bold">お値段.co.jp</p>
-                    </div>
-                </div>
-                <div class="header_image_area col-12">
-                    <img src="/img/header_image01_01.jpg" class="img-fluid" alt="">
-                </div>
-            </div>
-        </div>
+        <h1 class="header_logo">
+            <a href="#">PC e2wn</a>
+        </h1>
     </header>
 
+    <button type="button" onclick="myfunc_admin()">
+        <img src="../img/menu_icon_open.png" class="img_change" alt="">
+    </button>
+
+    <div class="menu_area">
+        <ul>
+            <li><a href="admin_product_add.php">商品の追加</a></li>
+            <li><a href="../admin_logout.php">ログアウト</a></li>
+        </ul>
+    </div>
+
+    <div class="top_image_area">
+        <img src="../img/header_image01_01.jpg" class="top_image" alt="">
+    </div>
+
+    <div class="admin_mark_area">
+        <p>管理者画面（eewano）</p>
+    </div>
+
+    <div class="title_area">
+        <h2>PCショップ eewano</h2>
+        <h3>商品ID [ <?php echo h01($product_id); ?> ] を以下の内容で変更します。宜しいですか？</h3>
+    </div>
+
     <main>
-        <div class="container">
-            <div class="row">
-                <h2 class="col-12 my-5 text-center">管理者 <?php echo h01($admin_name); ?> のページ</h2>
-                <h3 class="col-12 text-center">下記内容で登録し直します。宜しいですか？</h3>
-                
-                <div class="pruduct_area col-12 col-sm-6 col-lg-4">
-                    <div class="product_image_area">
-                        <?php if ($product_image == ''): ?>
-                        <img src="/img/no_image.png" class="img-fluid" alt="">
-                        <?php else: ?>
-                        <?php move_uploaded_file($product_image['tmp_name'], '../../img/' . $product_image['name']); ?>
-                        <img src="/img/<?php echo h01($product_image['name']); ?>" class="img-fluid" alt="">
-                        <?php endif; ?>
-                    </div>
-                    <p><?php echo h01($product_name); ?></p>
-                    <p><?php echo h01($product_price); ?></p>
-                    <p><?php echo h01($product_evaluation); ?></p>
-                    <p><?php echo h01($product_detail); ?></p>
-                </div>
-
-                <div class="product_edit_area">
-                    <form action="admin_product_edit_done.php?product_id=<?php echo h01($product_id); ?>" method="post">
-                        <input type="hidden" name="product_id" value="<?php echo h01($product_id); ?>">
-                        <input type="hidden" name="product_image_old" value="<?php echo h01($product_image_old); ?>">
-                        <input type="hidden" name="product_image" value="<?php echo h01($product_image['name']); ?>">
-                        <input type="hidden" name="product_name" value="<?php echo h01($product_name); ?>">
-                        <input type="hidden" name="product_price" value="<?php echo h01($product_price); ?>">
-                        <input type="hidden" name="product_evaluation" value="<?php echo h01($product_evaluation); ?>">
-                        <input type="hidden" name="product_detail" value="<?php echo h01($product_detail); ?>">
-                        <input type="button" onclick="history.back()" value="戻る">
-                        <input type="submit" value="OK">
-                    </form>
-                </div>
-
-                <div class="col-12">
-                    <a href="admin_logout.php">ログアウト</a>
-                </div>
+        <div class="register_area">
+            <div class="product_box">
+            <?php if ($product_image['name'] == ''): ?>
+                <img src="../img/no_image.png" alt="">
+            <?php else: ?>
+                <?php move_uploaded_file($product_image['tmp_name'], '../img/' . $product_image['name']); ?>
+                <img src="../img/<?php echo h01($product_image['name']); ?>" alt="">
+            <?php endif; ?>
+                <p class="product_name"><?php echo h01($product_name); ?></p>
+                <p class="product_price">¥ <?php echo h_price($product_price); ?></p>
+                <p class="product_evaluation"><?php echo h_evaluation($product_evaluation); ?></p>
+                <p class="product_review"><?php echo h01($product_detail); ?></p>
             </div>
+
+            <form action="admin_product_edit_done.php?product_id=<?php echo h01($product_id); ?>" method="post">
+                <input type="hidden" name="product_id" value="<?php echo h01($product_id); ?>">
+                <input type="hidden" name="product_image_old" value="<?php echo h01($product_image_old); ?>">
+                <input type="hidden" name="product_image" value="<?php echo h01($product_image['name']); ?>">
+                <input type="hidden" name="product_name" value="<?php echo h01($product_name); ?>">
+                <input type="hidden" name="product_price" value="<?php echo h01($product_price); ?>">
+                <input type="hidden" name="product_evaluation" value="<?php echo h01($product_evaluation); ?>">
+                <input type="hidden" name="product_detail" value="<?php echo h01($product_detail); ?>">
+                <div class="button_area">
+                    <input type="button" onclick="history.back()" class="btn_link return" value="1つ前に戻る">
+                    <input type="submit" class="btn_link register" value="登録">
+                </div>
+            </form>
         </div>
     </main>
 
     <footer>
-        <div class="container bg-warning mt-5">
-            <div class="row py-4">
-                <div class="footer_logo col-12 col-md-4">
-                    <div class="footer_logo_area mb-4 text-center text-dark">
-                        <p class="h3 font-weight-bold">PC SHOP</p>
-                        <p class="h4 font-weight-bold">お値段.co.jp</p>
-                    </div>
-                </div>
-
-                <div class="footer_link col-12 col-md-8">
-                    <ul class="list-inline">
-                        <li class="list-inline-item mx-0">
-                            <a href="" class="nav-link text-dark text-center">トップページ</a>
-                        </li>
-                        <li class="list-inline-item mx-0">
-                            <a href="" class="nav-link text-dark text-center">管理者画面</a>
-                        </li>
-                        <li class="list-inline-item mx-0">
-                            <a href="" class="nav-link text-dark text-center">登録ユーザー</a>
-                        </li>
-                        <li class="list-inline-item mx-0">
-                            <a href="" class="nav-link text-dark text-center">その他</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <p class="text-center col-12 mb-0">©2020 eewano portfolio</p>
-            </div>
+        <div class="footer_layout">
+            <h1>PC e2wn</h1>
+            <p class="portfolio_site">eewano Portfolio Site</p>
         </div>
+        <p class="copyright">&copy;2020 eewano portfolio</p>
     </footer>
 
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../js/main.js"></script>
 </body>
 </html>
