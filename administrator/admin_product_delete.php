@@ -29,9 +29,9 @@ $admin_name = $_SESSION['admin_name'];
 
 <?php
 
-try {
     $product_id = $_GET['product_id'];
 
+try {
     $dsn = 'mysql:dbname=portfolio_pc_shop; host=localhost; charset=utf8';
     $user = getDBUser();
     $password = getDBPass();
