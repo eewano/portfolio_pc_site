@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../method_php/method.php');
+require_once('../method_php/method.php');
 
 session_start();
 session_regenerate_id(true);
