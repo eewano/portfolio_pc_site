@@ -10,11 +10,14 @@
     max-width: 1140px;
 
     h3 {
-        color: #ff0000;
         font-size: 20px;
         font-weight: bold;
         text-align: center;
         margin-top: 60px;
+
+        .warning {
+            color: #ff0000;
+        }
     }
 
     p {

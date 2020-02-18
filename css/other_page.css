@@ -3,8 +3,8 @@ body {
   display: grid;
   -ms-grid-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1140px) [mainEnd] minmax(20px, 1fr) [right];
       grid-template-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1140px) [mainEnd] minmax(20px, 1fr) [right];
-  -ms-grid-rows: [head] auto [head] auto [img] auto [title] auto [main] auto [foot] auto [bottom];
-      grid-template-rows: [head] auto [head] auto [img] auto [title] auto [main] auto [foot] auto [bottom];
+  -ms-grid-rows: [head] auto [head] auto [img] auto [admin] auto [title] auto [main] auto [foot] auto [bottom];
+      grid-template-rows: [head] auto [head] auto [img] auto [admin] auto [title] auto [main] auto [foot] auto [bottom];
 }
 
 .title_area {
@@ -17,11 +17,14 @@ body {
 }
 
 .title_area h3 {
-  color: #ff0000;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
   margin-top: 60px;
+}
+
+.title_area h3 .warning {
+  color: #ff0000;
 }
 
 .title_area p {
@@ -46,4 +49,4 @@ body {
   text-decoration: none;
   border-radius: 4px;
 }
-/*# sourceMappingURL=error_page.css.map */
+/*# sourceMappingURL=other_page.css.map */
