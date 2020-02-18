@@ -262,6 +262,10 @@ main .register_area {
   margin-right: auto;
 }
 
+main .register_area.edit_mode {
+  padding-bottom: 0;
+}
+
 main .register_area .product_box {
   border: 1px solid #000000;
   padding: 20px;

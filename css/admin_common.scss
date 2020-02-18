@@ -214,6 +214,10 @@ main {
         max-width: 400px;
         margin-left: auto;
         margin-right: auto;
+
+        &.edit_mode {
+            padding-bottom: 0;
+        }
     
         .product_box {
             border: 1px solid #000000;
