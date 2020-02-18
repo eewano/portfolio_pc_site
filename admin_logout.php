@@ -51,7 +51,7 @@ session_destroy();
 
     <div class="title_area">
         <h3>管理者をログアウトしました。</h3>
-        <a href="/index.php" class="btn_link">サイトトップに戻る</a>
+        <a href="index.php" class="btn_link">サイトトップに戻る</a>
     </div>
 
     <footer>
