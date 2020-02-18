@@ -9,6 +9,45 @@ admin_login_register($_SESSION['admin_login']);
 
 $admin_name = $_SESSION['admin_name'];
 
+
+
+$post = sanitize($_POST);
+
+$product_image = $_FILES['product_image'];
+$product_name = $post['product_name'];
+$product_price = $post['product_price'];
+$product_evaluation = $post['product_evaluation'];
+$product_detail = $post['product_detail'];
+
+$okFlag = true;
+
+if ($product_image['size'] > 0) {
+    if ($product_image['size'] > 1000000) {
+        $okFlag = false;
+    }
+}
+
+if ($product_name == '') {
+    $okFlag = false;
+}
+
+if (preg_match('/^[0-9]+$/', $product_price) == 0) {
+    $okFlag = false;
+}
+
+if (preg_match('/^([1-7]{1})$/', $product_evaluation) == 0) {
+    $okFlag = false;
+}
+
+if ($product_detail == '') {
+    $okFlag = false;
+}
+
+if ($okFlag == false) {
+    header("location: javascript://history.go(-1)");
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -25,18 +64,6 @@ $admin_name = $_SESSION['admin_name'];
     <link rel="stylesheet" href="../css/admin_common.css">
 </head>
 <body>
-
-<?php
-
-$post = sanitize($_POST);
-
-$product_image = $_FILES['product_image'];
-$product_name = $post['product_name'];
-$product_price = $post['product_price'];
-$product_evaluation = $post['product_evaluation'];
-$product_detail = $post['product_detail'];
-
-?>
 
     <header>
         <h1 class="header_logo">
@@ -72,11 +99,15 @@ $product_detail = $post['product_detail'];
     <main>
         <div class="register_area">
             <div class="product_box">
+            <?php if ($product_image['size'] > 0): ?>
             <?php move_uploaded_file($product_image['tmp_name'], '../img/' . $product_image['name']); ?>
                 <img src="../img/<?php echo h01($product_image['name']); ?>" alt="" class="product_image">
+            <?php else: ?>
+                <img src="../img/no_image.png" alt="" class="product_image">
+            <?php endif; ?>
                 <p class="product_name"><?php echo h01($product_name); ?></p>
-                <p class="product_price"><?php echo h02($product_price); ?></p>
-                <p class="product_evaluation"><?php echo h01($product_evaluation); ?></p>
+                <p class="product_price">¥ <?php echo h_price($product_price); ?></p>
+                <p class="product_evaluation"><?php echo h_evaluation($product_evaluation); ?></p>
                 <p class="product_review"><?php echo h01($product_detail); ?></p>
             </div>
             <form action="admin_product_add_done.php" method="post">
