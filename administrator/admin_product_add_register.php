@@ -18,11 +18,11 @@ $admin_name = $_SESSION['admin_name'];
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio PC Site</title>
-    <link rel="stylesheet" href="/css/ress.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/admin_common.css">
+    <link rel="stylesheet" href="../css/ress.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/admin_common.css">
 </head>
 <body>
 
@@ -51,7 +51,7 @@ $product_detail = $post['product_detail'];
     <div class="menu_area">
         <ul>
             <li><a href="admin_product_add.php">商品の追加</a></li>
-            <li><a href="admin_logout.php">ログアウト</a></li>
+            <li><a href="../admin_logout.php">ログアウト</a></li>
         </ul>
     </div>
 
@@ -73,7 +73,7 @@ $product_detail = $post['product_detail'];
         <div class="register_area">
             <div class="product_box">
             <?php move_uploaded_file($product_image['tmp_name'], '../img/' . $product_image['name']); ?>
-                <img src="/img/<?php echo h01($product_image['name']); ?>" alt="" class="product_image">
+                <img src="../img/<?php echo h01($product_image['name']); ?>" alt="" class="product_image">
                 <p class="product_name"><?php echo h01($product_name); ?></p>
                 <p class="product_price"><?php echo h02($product_price); ?></p>
                 <p class="product_evaluation"><?php echo h01($product_evaluation); ?></p>

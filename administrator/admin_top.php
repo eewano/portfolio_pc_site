@@ -19,11 +19,11 @@ $admin_name = $_SESSION['admin_name'];
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio PC Site</title>
-    <link rel="stylesheet" href="/css/ress.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/admin_common.css">
+    <link rel="stylesheet" href="../css/ress.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/admin_common.css">
 </head>
 <body>
 
@@ -61,8 +61,8 @@ try {
 
     <div class="menu_area">
         <ul>
-            <li><a href="./admin_product_add.php">商品の追加</a></li>
-            <li><a href="/admin_logout.php">ログアウト</a></li>
+            <li><a href="admin_product_add.php">商品の追加</a></li>
+            <li><a href="../admin_logout.php">ログアウト</a></li>
         </ul>
     </div>
 
@@ -88,9 +88,9 @@ try {
         <?php endif; ?>
             <div class="product_box">
             <?php if ($rec['image'] == ''): ?>
-                <img src="/img/no_image.jpg" alt="" class="product_image">
+                <img src="../img/no_image.jpg" alt="" class="product_image">
             <?php else: ?>
-                <img src="/img/<?php echo $rec['image']; ?>" alt="" class="product_image">
+                <img src="../img/<?php echo $rec['image']; ?>" alt="" class="product_image">
             <?php endif; ?>
                 <p class="product_name"><?php echo h01($rec['name']); ?></p>
                 <p class="product_price">¥ <?php echo h02($rec['price']); ?></p>
