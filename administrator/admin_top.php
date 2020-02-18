@@ -40,6 +40,8 @@ try {
     $stmt = $dbh -> prepare($sql);
     $stmt -> execute();
 
+    $row_count = $dbh -> query($sql) -> rowCount();
+
     $dbh = null;
 
 } catch (Exception $e) {
@@ -76,7 +78,11 @@ try {
 
     <div class="title_area">
         <h2>PCショップ eewano</h2>
+        <?php if ($row_count == 0): ?>
+        <h3>まだ商品は登録されていません。</h3>
+        <?php else: ?>
         <h3>登録商品一覧</h3>
+        <?php endif; ?>
     </div>
 
     <main>
@@ -93,8 +99,8 @@ try {
                 <img src="../img/<?php echo $rec['image']; ?>" alt="" class="product_image">
             <?php endif; ?>
                 <p class="product_name"><?php echo h01($rec['name']); ?></p>
-                <p class="product_price">¥ <?php echo h02($rec['price']); ?></p>
-                <p class="product_evaluation"><?php echo h01($rec['evaluation']); ?></p>
+                <p class="product_price">¥ <?php echo h_price($rec['price']); ?></p>
+                <p class="product_evaluation"><?php echo h_evaluation($rec['evaluation']); ?></p>
                 <p class="product_review"><?php echo h01($rec['detail']); ?></p>
                 <form action="admin_product_branch.php" method="post" class="button_area">
                     <input type="hidden" name="product_id" value="<?php echo h01($rec['id']); ?>">
