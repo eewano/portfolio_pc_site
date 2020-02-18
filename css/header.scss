@@ -21,15 +21,15 @@ header {
     }
 
     h1 {
-        display: inline-block;
         font-size: 60px;
         font-weight: 800;
         letter-spacing: -4px;
         margin-left: 10px;
-        vertical-align: top;
+        line-height: 80px;
 
         @include mq(md) {
             font-size: 40px;
+            line-height: 60px;
         }
 
         a {
@@ -68,12 +68,14 @@ button {
     grid-row-start: head;
     justify-self: end;
     align-self: center;
+    margin-right: 20px;
 
     @include mq(md) {
         grid-row-start: head 2;
         justify-self: stretch;
         max-height: 0;
         overflow: hidden;
+        margin-right: 0;
     }
 
     @include mq(xg) {
