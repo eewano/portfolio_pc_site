@@ -86,7 +86,7 @@ try {
     </div>
 
     <main>
-        <div class="product_area">
+        <div class="product_list_area">
         <?php while (true): ?>
         <?php $rec = $stmt -> fetch(PDO::FETCH_ASSOC); ?>
         <?php if ($rec == false): ?>
@@ -101,8 +101,8 @@ try {
                 <p class="product_name"><?php echo h01($rec['name']); ?></p>
                 <p class="product_price">¥ <?php echo h_price($rec['price']); ?></p>
                 <p class="product_evaluation"><?php echo h_evaluation($rec['evaluation']); ?></p>
-                <p class="product_review"><?php echo h01($rec['detail']); ?></p>
-                <form action="admin_product_branch.php" method="post" class="button_area">
+                <p class="product_review txt_hide"><?php echo h01($rec['detail']); ?></p>
+                <form action="admin_product_branch.php" method="post" class="button_area_double">
                     <input type="hidden" name="product_id" value="<?php echo h01($rec['id']); ?>">
                     <input type="submit" name="edit" class="btn_link modify" value="修正">
                     <input type="submit" name="delete" class="btn_link delete" value="削除">

@@ -89,7 +89,7 @@ try {
     </div>
 
     <main>
-        <div class="register_area">
+        <div class="product_pickup_area">
             <div class="product_box">
             <?php if ($product_image['name'] == ''): ?>
                 <img src="../img/no_image.png" alt="">
@@ -104,7 +104,7 @@ try {
             <form action="admin_product_delete_done.php" method="post">
                 <input type="hidden" name="product_image" value="<?php echo h01($product_image); ?>">
                 <input type="hidden" name="product_id" value="<?php echo h01($product_id); ?>">
-                <div class="button_area">
+                <div class="button_area_double">
                     <input type="button" onclick="history.back()" class="btn_link return" value="1つ前に戻る">
                     <input type="submit" class="btn_link delete" value="削除">
                 </div>

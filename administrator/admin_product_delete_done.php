@@ -90,8 +90,8 @@ try {
     </div>
 
     <main>
-        <div class="register_area">
-            <a href="admin_top.php" class="btn_link return_to_top">管理者トップに戻る</a>
+        <div class="other_area">
+            <a href="admin_top.php" class="btn_link return">管理者トップに戻る</a>
         </div>
     </main>
 
