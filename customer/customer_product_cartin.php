@@ -94,7 +94,7 @@ try {
     </div>
 
     <main>
-        <div class="register_area">
+        <div class="product_pickup_area">
             <div class="product_box">
             <?php if ($product_image == ''): ?>
                 <img src="../img/no_image.png" alt="">
@@ -106,7 +106,9 @@ try {
                 <p class="product_evaluation"><?php echo h_evaluation($product_evaluation); ?></p>
                 <p class="product_review"><?php echo h01($product_detail); ?></p>
             </div>
-            <a href="../index.php" class="btn_link">トップに戻る</a>
+        </div>
+        <div class="other_area">
+            <a href="../index.php" class="btn_link return">トップに戻る</a>
         </div>
     </main>
 
