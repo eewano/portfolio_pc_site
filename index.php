@@ -104,7 +104,7 @@ try {
                 <p class="product_name"><?php echo h01($rec['name']); ?></p>
                 <p class="product_price">¥ <?php echo h_price($rec['price']); ?></p>
                 <p class="product_evaluation"><?php echo h_evaluation($rec['evaluation']); ?></p>
-                <p class="product_review"><?php echo h01($rec['detail']); ?></p>
+                <p class="product_review txt_hide"><?php echo h01($rec['detail']); ?></p>
             </a>
         <?php endwhile; ?>
         </div>
