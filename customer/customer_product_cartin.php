@@ -31,6 +31,11 @@ try {
     if (isset($_SESSION['cart']) == true) {
         $cart = $_SESSION['cart'];
         $quantity = $_SESSION['quantity'];
+
+        if (in_array($product_id, $cart) == true) {
+            header('Location: customer_product_select.php?product_id=' . $product_id . '');
+            exit();
+        }
     }
 
     $cart[] = $product_id;
