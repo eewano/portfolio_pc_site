@@ -1,3 +1,13 @@
+<?php
+
+require_once('method_php/method.php');
+require_once('method_php/get_user_pass.php');
+
+session_start();
+session_regenerate_id(true);
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
@@ -15,9 +25,6 @@
 
 <?php
 
-    require_once('method_php/method.php');
-    require_once('method_php/get_user_pass.php');
-
 try {
     $dsn = 'mysql:dbname=portfolio_pc_shop; host=localhost; charset=utf8';
     $user = getDBUser();
@@ -32,6 +39,11 @@ try {
     $row_count = $dbh -> query($sql) -> rowCount();
 
     $dbh = null;
+
+    if (isset($_SESSION['cart']) == true) {
+        $cart = $_SESSION['cart'];
+        $quantity = $_SESSION['quantity'];
+    }
 
 } catch (Exception $e) {
     header('Location: site_err.php');
@@ -54,7 +66,7 @@ try {
         <ul>
             <li><a href="index.php">トップ</a></li>
             <li><a href="#">ログイン</a></li>
-            <li><a href="#">カート</a></li>
+            <li><a href="customer/customer_cart_look.php">カート</a></li>
             <li><a href="admin_login.php">管理者用</a></li>
         </ul>
     </div>
@@ -80,7 +92,10 @@ try {
         <?php if ($rec == false): ?>
         <?php break; ?>
         <?php endif; ?>
-            <a href="#" class="product_box">
+            <a href="customer/customer_product_select.php?product_id=<?php echo $rec['id']; ?>" class="product_box">
+            <?php if (in_array($rec['id'], $cart) == true): ?>
+                <img src="img/cart_logo01.png" alt="" class="already_cartin">
+            <?php endif; ?>
             <?php if ($rec['image'] == ''): ?>
                 <img src="img/no_image.png" alt="">
             <?php else: ?>
