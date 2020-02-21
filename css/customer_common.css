@@ -7,42 +7,6 @@ body {
       grid-template-rows: [head] auto [head] auto [img] auto [admin] auto [title] auto [main] auto [foot] auto [bottom];
 }
 
-.admin_mark_area {
-  -ms-grid-column: left;
-      grid-column-start: left;
-  grid-column-end: right;
-  -ms-grid-row: admin;
-      grid-row-start: admin;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: #ff6b00;
-  height: 60px;
-  border: solid #000000;
-  border-width: 0px 2px 2px 2px;
-}
-
-@media screen and (min-width: 1140px) {
-  .admin_mark_area {
-    -ms-grid-column: mainStart;
-        grid-column-start: mainStart;
-    grid-column-end: mainEnd;
-  }
-}
-
-.admin_mark_area p {
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-}
-
 .title_area {
   -ms-grid-column: mainStart;
       grid-column-start: mainStart;
@@ -73,66 +37,50 @@ main {
       grid-row-start: main;
 }
 
-main .product_area {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  margin-bottom: 80px;
+main .product_pickup_area {
+  padding-top: 40px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@media screen and (max-width: 750px) {
-  main .product_area {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  main .product_area {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-  }
-}
-
-main .product_area .product_box {
+main .product_pickup_area .product_box {
   border: 1px solid #000000;
   padding: 20px;
 }
 
-main .product_area .product_box img {
+main .product_pickup_area .product_box img {
   width: 100%;
 }
 
-main .product_area .product_box .product_name {
+main .product_pickup_area .product_box .product_name {
   font-size: 14px;
   margin-top: 20px;
 }
 
-main .product_area .product_box .product_price {
+main .product_pickup_area .product_box .product_price {
   color: #ff0000;
   font-weight: bold;
   margin-top: 10px;
 }
 
-main .product_area .product_box .product_evaluation {
+main .product_pickup_area .product_box .product_evaluation {
   color: #d6c429;
   margin-top: 10px;
 }
 
-main .product_area .product_box .product_review {
+main .product_pickup_area .product_box .product_review {
+  margin-top: 20px;
+}
+
+main .product_pickup_area .product_box .product_review.txt_hide {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
-  margin-top: 20px;
 }
 
-main .product_area .product_box .button_area {
+main .product_pickup_area .button_area_double {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -142,220 +90,64 @@ main .product_area .product_box .button_area {
   grid-column-gap: 20px;
 }
 
-main .product_area .product_box .button_area .btn_link {
-  display: block;
-  color: #ffffff;
-  background-color: #444444;
+main .product_pickup_area .button_area_double .btn_link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+  width: 100%;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  margin-top: 20px;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 4px;
 }
 
-main .product_area .product_box .button_area .btn_link:hover {
+main .product_pickup_area .button_area_double .btn_link:hover {
   opacity: 0.5;
 }
 
-main .product_area .product_box .button_area .btn_link.modify {
+main .other_area {
+  padding-top: 40px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main .other_area .btn_link {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+main .other_area .btn_link:hover {
+  opacity: 0.5;
+}
+
+.btn_link.modify, .btn_link.return {
+  color: #ffffff;
   background-color: #444444;
 }
 
-main .product_area .product_box .button_area .btn_link.delete {
+.btn_link.delete {
+  color: #ffffff;
   background-color: #ff0000;
 }
 
-main .input_area {
-  max-width: 640px;
-  padding-top: 40px;
-  padding-bottom: 100px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-main .input_area p {
-  font-size: 14px;
-  margin-top: 20px;
-}
-
-main .input_area .input_space {
-  background-color: #eeeeee;
-  border: 1px solid #000000;
-  height: 30px;
-  margin-top: 10px;
-}
-
-main .input_area .input_space.type_image {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: #444444;
-  height: 40px;
-  border-radius: 5px;
-}
-
-main .input_area .input_space.type_image p {
+.btn_link.register {
   color: #ffffff;
-  margin-top: 0;
-}
-
-main .input_area .input_space.type_detail {
-  height: 120px;
-}
-
-main .input_area .button_area {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
-  grid-column-gap: 20px;
-}
-
-main .input_area .button_area .btn_link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: #ffffff;
-  background-color: #444444;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 30px;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 4px;
-}
-
-main .input_area .button_area .btn_link:hover {
-  opacity: 0.5;
-}
-
-main .input_area .button_area .btn_link.return {
-  background-color: #444444;
-}
-
-main .input_area .button_area .btn_link.register {
   background-color: #0000ff;
-}
-
-main .register_area {
-  padding-top: 40px;
-  padding-bottom: 100px;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-main .register_area.edit_mode {
-  padding-bottom: 0;
-}
-
-main .register_area .product_box {
-  border: 1px solid #000000;
-  padding: 20px;
-}
-
-main .register_area .product_box img {
-  width: 100%;
-}
-
-main .register_area .product_box .product_name {
-  font-size: 14px;
-  margin-top: 20px;
-}
-
-main .register_area .product_box .product_price {
-  color: #ff0000;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-main .register_area .product_box .product_evaluation {
-  color: #d6c429;
-  margin-top: 10px;
-}
-
-main .register_area .product_box .product_review {
-  margin-top: 20px;
-}
-
-main .register_area .button_area {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
-  grid-column-gap: 20px;
-}
-
-main .register_area .button_area .btn_link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-  color: #ffffff;
-  background-color: #444444;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 30px;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 4px;
-}
-
-main .register_area .button_area .btn_link:hover {
-  opacity: 0.5;
-}
-
-main .register_area .button_area .btn_link.return {
-  background-color: #444444;
-}
-
-main .register_area .button_area .btn_link.register {
-  background-color: #0000ff;
-}
-
-main .register_area .button_area .btn_link.delete {
-  background-color: #ff0000;
-}
-
-main .register_area .btn_link, main .register_area .return_to_top {
-  display: block;
-  width: 100%;
-  color: #ffffff;
-  background-color: #444444;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 80px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 4px;
 }
 /*# sourceMappingURL=customer_common.css.map */
