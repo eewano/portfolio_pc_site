@@ -26,6 +26,11 @@ session_regenerate_id(true);
 <?php
 
 try {
+    if (isset($_SESSION['cart']) == true) {
+        $cart = $_SESSION['cart'];
+        $quantity = $_SESSION['quantity'];
+    }
+    
     $product_id = $_GET['product_id'];
 
     $dsn = 'mysql:dbname=portfolio_pc_shop; host=localhost; charset=utf8';
@@ -47,11 +52,6 @@ try {
     $product_detail = $rec['detail'];
 
     $dbh = null;
-
-    if (isset($_SESSION['cart']) == true) {
-        $cart = $_SESSION['cart'];
-        $quantity = $_SESSION['quantity'];
-    }
 
 } catch (Exception $e) {
     header('Location: ../site_err.php');
@@ -93,7 +93,7 @@ try {
     </div>
 
     <main>
-        <div class="register_area">
+        <div class="product_pickup_area">
             <div class="product_box">
             <?php if ($product_image == ''): ?>
                 <img src="../img/no_image.png" alt="">
@@ -107,10 +107,10 @@ try {
             </div>
             <form action="customer_product_cartin.php?product_id=<?php echo h01($product_id); ?>" method="post">
                 <input type="hidden" name="product_id" value="<?php echo h01($product_id); ?>">
-                <div class="button_area">
-                    <input type="button" onclick="history.back()" class="btn_link return" value="1つ前に戻る">
+                <div class="button_area_double">
+                    <input type="button" onclick="history.back()" class="btn_link return" value="戻る">
                     <?php if (in_array($product_id, $cart) == false): ?>
-                    <input type="submit" class="btn_link register" value="カートに入れる">
+                    <input type="submit" class="btn_link register" value="追加">
                     <?php endif; ?>
                 </div>
             </form>
