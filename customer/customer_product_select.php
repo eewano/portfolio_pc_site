@@ -108,7 +108,7 @@ try {
             <form action="customer_product_cartin.php?product_id=<?php echo h01($product_id); ?>" method="post">
                 <input type="hidden" name="product_id" value="<?php echo h01($product_id); ?>">
                 <div class="button_area_double">
-                    <input type="button" onclick="history.back()" class="btn_link return" value="戻る">
+                    <a href="../index.php" class="btn_link return">戻る</a>
                     <?php if (in_array($product_id, $cart) == false): ?>
                     <input type="submit" class="btn_link register" value="追加">
                     <?php endif; ?>
