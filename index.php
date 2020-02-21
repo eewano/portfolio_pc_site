@@ -86,7 +86,7 @@ try {
     </div>
 
     <main>
-        <div class="product_area">
+        <div class="product_list_area">
         <?php while (true): ?>
         <?php $rec = $stmt -> fetch(PDO::FETCH_ASSOC); ?>
         <?php if ($rec == false): ?>
