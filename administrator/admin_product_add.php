@@ -59,7 +59,7 @@ $admin_name = $_SESSION['admin_name'];
     <main>
         <form action="admin_product_add_register.php" method="post" enctype="multipart/form-data" class="input_area">
             <p style="margin-bottom: 10px; width: 100%;">商品画像</p>
-            <input type="file" name="product_image">
+            <input type="file" name="product_image" style="width: 100%;">
             <p>商品名</p>
             <input type="text" name="product_name" class="input_space" style="width: 100%">
             <p>販売価格（円）</p>
@@ -68,7 +68,7 @@ $admin_name = $_SESSION['admin_name'];
             <input type="text" name="product_evaluation" class="input_space" style="width: 100%">
             <p>商品の詳細</p>
             <textarea name="product_detail" cols="20" rows="10" class="input_space type_detail" style="width: 100%"></textarea>
-            <div class="button_area">
+            <div class="button_area_double">
                 <input type="button" onclick="history.back()" class="btn_link return" value="1つ前に戻る">
                 <input type="submit" class="btn_link register" value="確認">
             </div>

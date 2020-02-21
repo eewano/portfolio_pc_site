@@ -93,7 +93,7 @@ try {
     </div>
 
     <main>
-        <div class="register_area">
+        <div class="product_pickup_area">
             <div class="product_box">
             <?php if ($product_image['name'] == ''): ?>
                 <img src="../img/no_image.png" alt="">
@@ -105,7 +105,9 @@ try {
                 <p class="product_evaluation"><?php echo h_evaluation($product_evaluation); ?></p>
                 <p class="product_review"><?php echo h01($product_detail); ?></p>
             </div>
-            <a href="admin_top.php" class="btn_link return_to_top">管理者トップに戻る</a>
+        </div>
+        <div class="other_area">
+            <a href="admin_top.php" class="btn_link return">管理者トップに戻る</a>
         </div>
     </main>
 

@@ -97,7 +97,7 @@ if ($okFlag == false) {
     </div>
 
     <main>
-        <div class="register_area">
+        <div class="product_pickup_area">
             <div class="product_box">
             <?php if ($product_image['name'] == ''): ?>
                 <img src="../img/no_image.png" alt="">
@@ -116,7 +116,7 @@ if ($okFlag == false) {
                 <input type="hidden" name="product_price" value="<?php echo h01($product_price); ?>">
                 <input type="hidden" name="product_evaluation" value="<?php echo h01($product_evaluation); ?>">
                 <input type="hidden" name="product_detail" value="<?php echo h01($product_detail); ?>">
-                <div class="button_area">
+                <div class="button_area_double">
                     <input type="button" onclick="history.back()" class="btn_link return" value="1つ前に戻る">
                     <input type="submit" class="btn_link register" value="登録">
                 </div>

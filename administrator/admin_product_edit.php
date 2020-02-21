@@ -108,7 +108,7 @@ try {
             <input type="hidden" name="product_id" value="<?php echo h01($product_id); ?>">
             <input type="hidden" name="product_image_old" value="<?php echo h01($product_image_old); ?>">
             <p style="margin-bottom: 10px; width: 100%;">商品画像</p>
-            <input type="file" name="product_image" style="width: 100%">
+            <input type="file" name="product_image" style="width: 100%;">
             <p>商品名</p>
             <input type="text" name="product_name" class="input_space" style="width: 100%" value="<?php echo h01($product_name_old); ?>">
             <p>販売価格（円）</p>
