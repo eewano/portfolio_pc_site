@@ -47,7 +47,7 @@
             <input type="text" name="admin_name" class="input_space" style="width: 100%">
             <p>パスワード</p>
             <input type="password" name="admin_pass" class="input_space" style="width: 100%">
-            <div class="button_area">
+            <div class="button_area_double">
                 <input type="submit" class="btn_link register" value="ログイン">
                 <a href="/index.php" class="btn_link return">トップに戻る</a>
             </div>

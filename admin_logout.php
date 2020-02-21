@@ -22,7 +22,7 @@ session_destroy();
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/other_page.css">
+    <link rel="stylesheet" href="/css/admin_common.css">
 </head>
 <body>
 
@@ -51,8 +51,13 @@ session_destroy();
 
     <div class="title_area">
         <h3>管理者をログアウトしました。</h3>
-        <a href="index.php" class="btn_link">サイトトップに戻る</a>
     </div>
+
+    <main>
+        <div class="other_area">
+            <a href="index.php" class="btn_link return">サイトトップに戻る</a>
+        </div>
+    </main>
 
     <footer>
         <div class="footer_layout">
