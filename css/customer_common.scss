@@ -208,6 +208,57 @@ main {
     }
     // ↑入力フォーム表示↑
 
+    // ↓送信確認表示↓
+    .register_area {
+        padding-top: 40px;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .register_box {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: auto;
+
+            @include mq(md) {
+                grid-template-columns: 1fr;
+            }
+
+            p {
+                font-size: 14px;
+                margin-top: 20px;
+                text-align: justify;
+                text-justify: inter-ideograph;
+
+                &.item {
+                    font-weight: bold;
+                    text-align: right;
+
+                    @include mq(md) {
+                        text-align: initial;
+                    }
+                }
+
+                &.input {
+                    padding-left: 20px;
+                }
+            }
+        }
+    
+        .button_area_double {
+            @include btn_area_double_parts();
+
+            .btn_link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 30px;
+                @include link_button_parts();
+            }
+        }
+    }
+    // ↑送信確認表示↑
+
     .other_area {
         padding-top: 40px;
         max-width: 480px;
