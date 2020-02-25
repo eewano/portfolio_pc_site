@@ -110,7 +110,7 @@ try {
                 <div class="button_area_double">
                     <a href="../index.php" class="btn_link return">戻る</a>
                     <?php if (in_array($product_id, $cart) == false): ?>
-                    <input type="submit" class="btn_link register" value="追加">
+                    <input type="submit" class="btn_link btn_long register" value="追加">
                     <?php endif; ?>
                 </div>
             </form>
