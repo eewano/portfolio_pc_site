@@ -114,11 +114,142 @@ main .product_pickup_area .button_area_double .btn_link:hover {
   opacity: 0.5;
 }
 
+main .cart_list_area {
+  padding-top: 40px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 750px) {
+  main .cart_list_area {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+main .cart_list_area .cart_box {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  border-top: 1px solid #404040;
+  border-bottom: 1px dashed #404040;
+  border-left: 1px solid #404040;
+  border-right: 1px solid #404040;
+  padding: 10px;
+}
+
+main .cart_list_area .cart_box .product_image {
+  -ms-grid-row-span: 2;
+      grid-row-end: span 2;
+  width: 100%;
+}
+
+main .cart_list_area .cart_box .product_name {
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+main .cart_list_area .calc_area {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 2fr;
+      grid-template-columns: 1fr 1fr 2fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  border-bottom: 1px solid #404040;
+  border-left: 1px solid #404040;
+  border-right: 1px solid #404040;
+}
+
+main .cart_list_area .calc_area p {
+  margin-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+main .cart_list_area .calc_area p .select_number {
+  background-color: #dddddd;
+}
+
+main .cart_list_area .calc_area .txt_quantity {
+  text-align: right;
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+main .cart_list_area .product_price {
+  color: #ff0000;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+main .input_area {
+  max-width: 640px;
+  padding-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main .input_area p {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+main .input_area .input_space {
+  background-color: #eeeeee;
+  border: 1px solid #000000;
+  height: 30px;
+  margin-top: 10px;
+  padding-left: 5px;
+}
+
+main .input_area .button_area_double {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  grid-column-gap: 20px;
+}
+
+main .input_area .button_area_double .btn_link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+main .input_area .button_area_double .btn_link:hover {
+  opacity: 0.5;
+}
+
 main .other_area {
   padding-top: 40px;
   max-width: 480px;
   margin-left: auto;
   margin-right: auto;
+}
+
+main .other_area h3 {
+  text-align: center;
 }
 
 main .other_area .btn_link {
@@ -134,6 +265,10 @@ main .other_area .btn_link {
 
 main .other_area .btn_link:hover {
   opacity: 0.5;
+}
+
+main .other_area .btn_link.btn_long {
+  margin-top: 80px;
 }
 
 .btn_link.modify, .btn_link.return {
