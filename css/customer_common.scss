@@ -77,6 +77,11 @@
         margin-top: 60px;
         margin-bottom: 20px;
     }
+
+    p {
+        font-size: 14px;
+        text-align: center;
+    }
 }
 
 main {
@@ -260,7 +265,7 @@ main {
     // ↑送信確認表示↑
 
     .other_area {
-        padding-top: 40px;
+        padding-top: 80px;
         max-width: 480px;
         margin-left: auto;
         margin-right: auto;
