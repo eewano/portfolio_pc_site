@@ -21,6 +21,7 @@ session_regenerate_id(true);
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/customer_common.css">
 </head>
+<body>
 
 <?php
 
@@ -109,9 +110,6 @@ try {
 }
 
 ?>
-
-
-<body>
 
     <header>
         <h1 class="header_logo">
