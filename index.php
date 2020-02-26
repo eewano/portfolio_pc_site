@@ -26,7 +26,7 @@ session_regenerate_id(true);
 <?php
 
 try {
-    $dsn = 'mysql:dbname=portfolio_pc_shop; host=localhost; charset=utf8';
+    $dsn = getDBServer();
     $user = getDBUser();
     $password = getDBPass();
     $dbh = new PDO($dsn, $user, $password);

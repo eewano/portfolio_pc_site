@@ -32,7 +32,7 @@ $admin_name = $_SESSION['admin_name'];
     $product_id = $_GET['product_id'];
 
 try {
-    $dsn = 'mysql:dbname=portfolio_pc_shop; host=localhost; charset=utf8';
+    $dsn = getDBServer();
     $user = getDBUser();
     $password = getDBPass();
     $dbh = new PDO($dsn, $user, $password);
