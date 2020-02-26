@@ -44,4 +44,25 @@ function admin_login_register($admin_login) {
     }
 }
 
+function getEmailTxt01($name, $postal_code, $address) {
+    $text = "";
+    $text .= $name . "様\n\nこの度は当サイトにてお買い物シミュレーションを実施頂き、誠にありがとうございます。\n\n";
+    $text .= "ご注文頂いた商品は、以下の住所に発送させて頂きます。\n\n";
+    $text .= "〒 " . $postal_code . "\n";
+    $text .= $address . "\n\n";
+    $text .= "【ご注文商品】\n";
+    $text .= "--------------------------------------------------\n";
+
+    return $text;
+}
+
+function getEmailTxt02($name) {
+    $text = "\n";
+    $text .= "送料は無料です。\n";
+    $text .= "--------------------------------------------------\n\n";
+    $text .= "以上でシミュレーションは終了です。" . $name . "様、本日はどうもありがとうございました。\n";
+
+    return $text;
+}
+
 ?>

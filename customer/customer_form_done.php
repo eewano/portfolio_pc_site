@@ -34,30 +34,37 @@ try {
     $customer_address = $post['customer_address'];
     $customer_tel = $post['customer_tel'];
 
+    $email_text = '';
+    $email_text .= getEmailTxt01($customer_name, $customer_postal_code, $customer_address);
+
     $cart = $_SESSION['cart'];
     $quantity = $_SESSION['quantity'];
     $cart_max = count($cart);
 
-    $dsn = 'mysql:dbname=portfolio_pc_shop; host=localhost; charset=utf8';
+    $dsn = getDBServer();
     $user = getDBUser();
     $password = getDBPass();
     $dbh = new PDO($dsn, $user, $password);
     $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     for ($i = 0; $i < $cart_max; $i++) {
-        $sql = 'SELECT image, name, price FROM shop_product WHERE id=?';
+        $sql = 'SELECT name, price FROM shop_product WHERE id=?';
         $stmt = $dbh -> prepare($sql);
         $data[0] = $cart[$i];
         $stmt -> execute($data);
 
         $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        $product_image = $rec['image'];
         $product_name = $rec['name'];
         $product_price = $rec['price'];
         $total_price[] = $product_price;
         $total_quantity = $quantity[$i];
         $sub_total = $product_price * $total_quantity;
+
+        $email_text .= $product_name . " ";
+        $email_text .= $product_price . "円 × ";
+        $email_text .= $total_quantity . "個 = ";
+        $email_text .= $sub_total . "円\n";
     }
 
     $sql = 'LOCK TABLES order_from_customer WRITE, order_product WRITE';
@@ -97,6 +104,18 @@ try {
     $stmt -> execute();
 
     $dbh = null;
+
+    $email_text .= getEmailTxt02($customer_name);
+
+    $email_text = html_entity_decode($email_text, ENT_QUOTES, 'UTF-8');
+    mb_language('ja');
+    mb_internal_encoding('UTF-8');
+    mb_send_mail($customer_email, 'PCショップeewanoからのお知らせ', $email_text, getAdminEmail());
+
+    $email_text = html_entity_decode($email_text, ENT_QUOTES, 'UTF-8');
+    mb_language('ja');
+    mb_internal_encoding('UTF-8');
+    mb_send_mail(getAdminEmail(), 'お客様からのご注文情報', $email_text, 'From:' . $customer_email);
 
     if (isset($_COOKIE[session_name()]) == true) {
         setcookie(session_name(), '', time() - 42000, '/');
