@@ -1,7 +1,7 @@
 <?php
 
-require_once('../method_php/method.php');
-require_once('../method_php/get_user_pass.php');
+require_once(__DIR__ . '/../method_php/method.php');
+require_once(__DIR__ . '/../method_php/get_user_pass.php');
 
 session_start();
 session_regenerate_id(true);
@@ -53,7 +53,7 @@ try {
     $dbh = null;
 
 } catch (Exception $e) {
-    header('Location: ../site_err.php');
+    header('Location: ' . get_url() . '/site_err.php');
     exit();
 }
 
@@ -71,8 +71,8 @@ try {
 
     <div class="menu_area">
         <ul>
-            <li><a href="admin_product_add.php">商品の追加</a></li>
-            <li><a href="../admin_logout.php">ログアウト</a></li>
+            <li><a href="<?php echo get_url(); ?>/administrator/admin_product_add.php">商品の追加</a></li>
+            <li><a href="<?php echo get_url(); ?>/admin_logout.php">ログアウト</a></li>
         </ul>
     </div>
 
@@ -104,7 +104,7 @@ try {
             </div>
         </div>
 
-        <form action="admin_product_edit_register.php?product_id=<?php echo h01($product_id); ?>" method="post" enctype="multipart/form-data" class="input_area">
+        <form action="<?php echo get_url(); ?>/administrator/admin_product_edit_register.php?product_id=<?php echo h01($product_id); ?>" method="post" enctype="multipart/form-data" class="input_area">
             <input type="hidden" name="product_id" value="<?php echo h01($product_id); ?>">
             <input type="hidden" name="product_image_old" value="<?php echo h01($product_image_old); ?>">
             <p style="margin-bottom: 10px; width: 100%;">商品画像</p>

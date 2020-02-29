@@ -1,7 +1,7 @@
 <?php
 
-require_once('../method_php/method.php');
-require_once('../method_php/get_user_pass.php');
+require_once(__DIR__ . '/../method_php/method.php');
+require_once(__DIR__ . '/../method_php/get_user_pass.php');
 
 try {
     $post = sanitize($_POST);
@@ -31,16 +31,16 @@ try {
         $_SESSION['admin_login'] = 1;
         $_SESSION['admin_id'] = $admin_id;
         $_SESSION['admin_name'] = $admin_name;
-        header('Location: admin_top.php');
+        header('Location: ' . get_url() . '/administrator/admin_top.php');
         exit();
 
     } else {
-        header('Location: ../admin_login.php');
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
         exit();
     }
     
 } catch (Exception $e) {
-    header('Location: ../site_err.php');
+    header('Location: ' . get_url() . '/site_err.php');
 	exit();
 }
 

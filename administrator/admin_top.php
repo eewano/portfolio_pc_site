@@ -1,7 +1,7 @@
 <?php
 
-require_once('../method_php/method.php');
-require_once('../method_php/get_user_pass.php');
+require_once(__DIR__ . '/../method_php/method.php');
+require_once(__DIR__ . '/../method_php/get_user_pass.php');
 
 session_start();
 session_regenerate_id(true);
@@ -45,7 +45,7 @@ try {
     $dbh = null;
 
 } catch (Exception $e) {
-    header('Location: ../site_err.php');
+    header('Location: ' . get_url() . '/site_err.php');
 	exit();
 }
 
@@ -63,8 +63,8 @@ try {
 
     <div class="menu_area">
         <ul>
-            <li><a href="admin_product_add.php">商品の追加</a></li>
-            <li><a href="../admin_logout.php">ログアウト</a></li>
+            <li><a href="<?php echo get_url(); ?>/administrator/admin_product_add.php">商品の追加</a></li>
+            <li><a href="<?php echo get_url(); ?>/admin_logout.php">ログアウト</a></li>
         </ul>
     </div>
 
@@ -102,7 +102,7 @@ try {
                 <p class="product_price">¥ <?php echo h_price($rec['price']); ?></p>
                 <p class="product_evaluation"><?php echo h_evaluation($rec['evaluation']); ?></p>
                 <p class="product_review txt_hide"><?php echo h01($rec['detail']); ?></p>
-                <form action="admin_product_branch.php" method="post" class="button_area_double">
+                <form action="<?php echo get_url(); ?>/administrator/admin_product_branch.php" method="post" class="button_area_double">
                     <input type="hidden" name="product_id" value="<?php echo h01($rec['id']); ?>">
                     <input type="submit" name="edit" class="btn_link modify" value="修正">
                     <input type="submit" name="delete" class="btn_link delete" value="削除">
