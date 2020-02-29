@@ -14,7 +14,8 @@
 
 <?php
 
-require_once('../method_php/method.php');
+require_once(__DIR__ . '/../method_php/method.php');
+require_once(__DIR__ . '/../method_php/get_user_pass.php');
 
 $post = sanitize($_POST);
 
@@ -47,7 +48,7 @@ if (preg_match('/^\d{2,5}-?\d{2,5}-?\d{4,5}$/', $customer_tel) == 0) {
 }
 
 if ($okFlag == false) {
-    header('Location: javascript://history.go(-1)');
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
     exit();
 }
 
@@ -68,10 +69,10 @@ if ($okFlag == false) {
 
     <div class="menu_area">
         <ul>
-            <li><a href="../index.php">トップ</a></li>
+            <li><a href="<?php echo get_url(); ?>/index.php">トップ</a></li>
             <li><a href="#">ログイン</a></li>
-            <li><a href="#">カート</a></li>
-            <li><a href="../admin_login.php">管理者用</a></li>
+            <li><a href="<?php echo get_url(); ?>/customer/customer_cart_look.php">カート</a></li>
+            <li><a href="<?php echo get_url(); ?>/admin_login.php">管理者用</a></li>
         </ul>
     </div>
 
@@ -99,7 +100,7 @@ if ($okFlag == false) {
                 <p class="input"><?php echo h01($customer_tel); ?></p>
             </div>
     
-            <form action="customer_form_done.php" method="post">
+            <form action="<?php echo get_url(); ?>/customer/customer_form_done.php" method="post">
                 <input type="hidden" name="customer_name" value="<?php echo h01($customer_name); ?>">
                 <input type="hidden" name="customer_email" value="<?php echo h01($customer_email); ?>">
                 <input type="hidden" name="customer_postal_code" value="<?php echo h01($customer_postal_code); ?>">

@@ -1,7 +1,7 @@
 <?php
 
-require_once('../method_php/method.php');
-require_once('../method_php/get_user_pass.php');
+require_once(__DIR__ . '/../method_php/method.php');
+require_once(__DIR__ . '/../method_php/get_user_pass.php');
 
 session_start();
 session_regenerate_id(true);
@@ -54,7 +54,7 @@ try {
     $dbh = null;
 
 } catch (Exception $e) {
-    header('Location: ../site_err.php');
+    header('Location: ' . get_url() . '/site_err.php');
     exit();
 }
 
@@ -72,10 +72,10 @@ try {
 
     <div class="menu_area">
         <ul>
-            <li><a href="../index.php">トップ</a></li>
+            <li><a href="<?php echo get_url(); ?>/index.php">トップ</a></li>
             <li><a href="#">ログイン</a></li>
-            <li><a href="#">カート</a></li>
-            <li><a href="../admin_login.php">管理者用</a></li>
+            <li><a href="<?php echo get_url(); ?>/customer/customer_cart_look.php">カート</a></li>
+            <li><a href="<?php echo get_url(); ?>/admin_login.php">管理者用</a></li>
         </ul>
     </div>
 
@@ -105,10 +105,10 @@ try {
                 <p class="product_evaluation"><?php echo h_evaluation($product_evaluation); ?></p>
                 <p class="product_review"><?php echo h01($product_detail); ?></p>
             </div>
-            <form action="customer_product_cartin.php?product_id=<?php echo h01($product_id); ?>" method="post">
+            <form action="<?php echo get_url(); ?>/customer/customer_product_cartin.php?product_id=<?php echo h01($product_id); ?>" method="post">
                 <input type="hidden" name="product_id" value="<?php echo h01($product_id); ?>">
                 <div class="button_area_double">
-                    <a href="../index.php" class="btn_link return">戻る</a>
+                    <a href="<?php echo get_url(); ?>/index.php" class="btn_link return">戻る</a>
                     <?php if (in_array($product_id, $cart) == false): ?>
                     <input type="submit" class="btn_link btn_long register" value="追加">
                     <?php endif; ?>

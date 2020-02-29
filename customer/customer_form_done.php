@@ -1,7 +1,7 @@
 <?php
 
-require_once('../method_php/method.php');
-require_once('../method_php/get_user_pass.php');
+require_once(__DIR__ . '/../method_php/method.php');
+require_once(__DIR__ . '/../method_php/get_user_pass.php');
 
 session_start();
 session_regenerate_id(true);
@@ -124,7 +124,7 @@ try {
     session_destroy();
 
 } catch (Exception $e) {
-    header('Location: ../site_err.php');
+    header('Location: ' . get_url() . '/site_err.php');
     exit();
 }
 
@@ -142,10 +142,10 @@ try {
 
     <div class="menu_area">
         <ul>
-            <li><a href="../index.php">トップ</a></li>
+            <li><a href="<?php echo get_url(); ?>/index.php">トップ</a></li>
             <li><a href="#">ログイン</a></li>
-            <li><a href="customer_cart_look.php">カート</a></li>
-            <li><a href="../admin_login.php">管理者用</a></li>
+            <li><a href="<?php echo get_url(); ?>/customer/customer_cart_look.php">カート</a></li>
+            <li><a href="<?php echo get_url(); ?>/admin_login.php">管理者用</a></li>
         </ul>
     </div>
 
@@ -161,7 +161,7 @@ try {
 
     <main>
         <div class="other_area">
-            <a href="../index.php" class="btn_link return">トップに戻る</a>
+            <a href="<?php echo get_url(); ?>/index.php" class="btn_link return">トップに戻る</a>
         </div>
     </main>
 

@@ -1,7 +1,7 @@
 <?php
 
-require_once('../method_php/method.php');
-require_once('../method_php/get_user_pass.php');
+require_once(__DIR__ . '/../method_php/method.php');
+require_once(__DIR__ . '/../method_php/get_user_pass.php');
 
 session_start();
 session_regenerate_id(true);
@@ -29,7 +29,7 @@ for ($i = $cart_max; 0 <= $i; $i--) {
 $_SESSION['cart'] = $cart;
 $_SESSION['quantity'] = $quantity;
 
-header('Location: customer_cart_look.php');
+header('Location: ' . get_url() . '/customer/customer_cart_look.php');
 exit();
 
 ?>

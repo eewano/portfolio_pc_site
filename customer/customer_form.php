@@ -13,6 +13,13 @@
 </head>
 <body>
 
+<?php
+
+require_once(__DIR__ . '/../method_php/method.php');
+require_once(__DIR__ . '/../method_php/get_user_pass.php');
+
+?>
+
     <header>
         <h1 class="header_logo">
             <a href="#">PC e2wn</a>
@@ -25,10 +32,10 @@
 
     <div class="menu_area">
         <ul>
-            <li><a href="../index.php">トップ</a></li>
+            <li><a href="<?php echo get_url(); ?>/index.php">トップ</a></li>
             <li><a href="#">ログイン</a></li>
-            <li><a href="#">カート</a></li>
-            <li><a href="../admin_login.php">管理者用</a></li>
+            <li><a href="<?php echo get_url(); ?>/customer/customer_cart_look.php">カート</a></li>
+            <li><a href="<?php echo get_url(); ?>/admin_login.php">管理者用</a></li>
         </ul>
     </div>
 
@@ -42,7 +49,7 @@
     </div>
 
     <main>
-        <form action="customer_form_check.php" method="post" class="input_area">
+        <form action="<?php echo get_url(); ?>/customer/customer_form_check.php" method="post" class="input_area">
             <p>お名前（ペンネーム）</p>
             <input type="text" name="customer_name" class="input_space" style="width: 100%">
             <p>メールアドレス（フィクション）</p>

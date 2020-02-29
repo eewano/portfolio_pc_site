@@ -1,7 +1,7 @@
 <?php
 
-require_once('../method_php/method.php');
-require_once('../method_php/get_user_pass.php');
+require_once(__DIR__ . '/../method_php/method.php');
+require_once(__DIR__ . '/../method_php/get_user_pass.php');
 
 session_start();
 session_regenerate_id(true);
@@ -56,7 +56,7 @@ try {
     $dbh = null;
 
 } catch (Exception $e) {
-    header('Location: ../site_err.php');
+    header('Location: ' . get_url() . '/site_err.php');
     exit();
 }
 
@@ -74,10 +74,10 @@ try {
 
     <div class="menu_area">
         <ul>
-            <li><a href="../index.php">トップ</a></li>
+            <li><a href="<?php echo get_url(); ?>/index.php">トップ</a></li>
             <li><a href="#">ログイン</a></li>
-            <li><a href="customer_cart_look.php">カート</a></li>
-            <li><a href="../admin_login.php">管理者用</a></li>
+            <li><a href="<?php echo get_url(); ?>/customer/customer_cart_look.php">カート</a></li>
+            <li><a href="<?php echo get_url(); ?>/admin_login.php">管理者用</a></li>
         </ul>
     </div>
 
@@ -97,7 +97,7 @@ try {
     <?php if ($cart_max == true): ?>
     <main>
         <div class="cart_list_area">
-            <form action="customer_cart_change.php" method="post">
+            <form action="<?php echo get_url(); ?>/customer/customer_cart_change.php" method="post">
             <?php for ($i = 0; $i < $cart_max; $i++): ?>
                 <div class="cart_box">
                 <?php if ($product_image[$i] == ''): ?>
@@ -125,8 +125,16 @@ try {
         </div>
         <div class="other_area">
             <h3>以上の内容で購入手続き致します。宜しいですか？</h3>
-            <a href="customer_form.php" class="btn_link btn_long register">ご購入手続きへ進む</a>
-            <a href="../index.php" class="btn_link btn_long return">トップに戻る</a>
+            <a href="<?php echo get_url(); ?>/customer/customer_form.php" class="btn_link btn_long register">ご購入手続きへ進む</a>
+            <a href="<?php echo get_url(); ?>/index.php" class="btn_link btn_long return">トップに戻る</a>
+        </div>
+    </main>
+    <?php endif; ?>
+
+    <?php if ($cart_max == false): ?>
+    <main>
+        <div class="other_area">
+            <a href="<?php echo get_url(); ?>/index.php" class="btn_link return">トップに戻る</a>
         </div>
     </main>
     <?php endif; ?>
