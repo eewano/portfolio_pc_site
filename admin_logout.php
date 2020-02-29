@@ -9,6 +9,9 @@ if (isset($_COOKIE[session_name()]) == true) {
 
 session_destroy();
 
+require_once(__DIR__ . '/method_php/method.php');
+require_once(__DIR__ . '/method_php/get_user_pass.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -38,10 +41,10 @@ session_destroy();
 
     <div class="menu_area">
         <ul>
-            <li><a href="index.php">トップ</a></li>
+            <li><a href="<?php echo get_url(); ?>/index.php">トップ</a></li>
             <li><a href="#">ログイン</a></li>
-            <li><a href="#">カート</a></li>
-            <li><a href="admin_login.php">管理者用</a></li>
+            <li><a href="<?php echo get_url(); ?>/customer/customer_cart_look.php">カート</a></li>
+            <li><a href="<?php echo get_url(); ?>/admin_login.php">管理者用</a></li>
         </ul>
     </div>
 
@@ -55,7 +58,7 @@ session_destroy();
 
     <main>
         <div class="other_area">
-            <a href="index.php" class="btn_link return">サイトトップに戻る</a>
+            <a href="<?php echo get_url(); ?>/index.php" class="btn_link return">サイトトップに戻る</a>
         </div>
     </main>
 

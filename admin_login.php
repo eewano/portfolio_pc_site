@@ -1,3 +1,13 @@
+<?php
+
+require_once(__DIR__ . '/method_php/method.php');
+require_once(__DIR__ . '/method_php/get_user_pass.php');
+
+session_start();
+session_regenerate_id(true);
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
@@ -25,10 +35,10 @@
 
     <div class="menu_area">
         <ul>
-            <li><a href="/index.php">トップ</a></li>
+            <li><a href="<?php echo get_url(); ?>/index.php">トップ</a></li>
             <li><a href="#">ログイン</a></li>
-            <li><a href="#">カート</a></li>
-            <li><a href="#">管理者用</a></li>
+            <li><a href="<?php echo get_url(); ?>/customer/customer_cart_look.php">カート</a></li>
+            <li><a href="<?php echo get_url(); ?>/admin_login.php">管理者用</a></li>
         </ul>
     </div>
 
@@ -42,14 +52,14 @@
     </div>
 
     <main>
-        <form action="/administrator/admin_login_check.php" method="post" class="input_area">
+        <form action="<?php echo get_url(); ?>/administrator/admin_login_check.php" method="post" class="input_area">
             <p>管理者名</p>
             <input type="text" name="admin_name" class="input_space" style="width: 100%">
             <p>パスワード</p>
             <input type="password" name="admin_pass" class="input_space" style="width: 100%">
             <div class="button_area_double">
                 <input type="submit" class="btn_link register" value="ログイン">
-                <a href="/index.php" class="btn_link return">トップに戻る</a>
+                <a href="<?php echo get_url(); ?>/index.php" class="btn_link return">トップに戻る</a>
             </div>
         </form>
     </main>

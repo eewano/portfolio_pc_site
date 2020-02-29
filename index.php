@@ -1,7 +1,7 @@
 <?php
 
-require_once('method_php/method.php');
-require_once('method_php/get_user_pass.php');
+require_once(__DIR__ . '/method_php/method.php');
+require_once(__DIR__ . '/method_php/get_user_pass.php');
 
 session_start();
 session_regenerate_id(true);
@@ -64,10 +64,10 @@ try {
 
     <div class="menu_area">
         <ul>
-            <li><a href="index.php">トップ</a></li>
+            <li><a href="<?php echo get_url(); ?>/index.php">トップ</a></li>
             <li><a href="#">ログイン</a></li>
-            <li><a href="customer/customer_cart_look.php">カート</a></li>
-            <li><a href="admin_login.php">管理者用</a></li>
+            <li><a href="<?php echo get_url(); ?>/customer/customer_cart_look.php">カート</a></li>
+            <li><a href="<?php echo get_url(); ?>/admin_login.php">管理者用</a></li>
         </ul>
     </div>
 
@@ -92,7 +92,7 @@ try {
         <?php if ($rec == false): ?>
         <?php break; ?>
         <?php endif; ?>
-            <a href="customer/customer_product_select.php?product_id=<?php echo $rec['id']; ?>" class="product_box">
+            <a href="<?php echo get_url(); ?>/customer/customer_product_select.php?product_id=<?php echo $rec['id']; ?>" class="product_box">
             <?php if (in_array($rec['id'], $cart) == true): ?>
                 <img src="img/cart_logo01.png" alt="" class="already_cartin">
             <?php endif; ?>

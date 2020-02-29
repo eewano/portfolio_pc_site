@@ -1,3 +1,10 @@
+<?php
+
+require_once(__DIR__ . '/method_php/method.php');
+require_once(__DIR__ . '/method_php/get_user_pass.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
@@ -25,10 +32,10 @@
 
     <div class="menu_area">
         <ul>
-            <li><a href="index.php">トップ</a></li>
+            <li><a href="<?php echo get_url(); ?>/index.php">トップ</a></li>
             <li><a href="#">ログイン</a></li>
-            <li><a href="#">カート</a></li>
-            <li><a href="admin_login.php">管理者用</a></li>
+            <li><a href="<?php echo get_url(); ?>/customer/customer_cart_look.php">カート</a></li>
+            <li><a href="<?php echo get_url(); ?>/admin_login.php">管理者用</a></li>
         </ul>
     </div>
 
@@ -39,7 +46,7 @@
     <div class="title_area">
         <h3>予期せぬエラー</h3>
         <p>ただいま障害により大変ご迷惑をお掛けしております。</p>
-        <a href="index.php" class="btn_link">サイトトップに戻る</a>
+        <a href="<?php echo get_url(); ?>/index.php" class="btn_link">サイトトップに戻る</a>
     </div>
 
     <footer>
