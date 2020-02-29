@@ -100,25 +100,27 @@ try {
             <form action="<?php echo get_url(); ?>/customer/customer_cart_change.php" method="post">
             <?php for ($i = 0; $i < $cart_max; $i++): ?>
                 <div class="cart_box">
-                <?php if ($product_image[$i] == ''): ?>
-                    <img src="../img/no_image.png" class="product_image" alt="">
-                <?php else: ?>
-                    <img src="../img/<?php echo h01($product_image[$i]); ?>" class="product_image" alt="">
-                <?php endif; ?>
-                    <p class="product_name"><?php echo h01($product_name[$i]); ?></p>
-                    <p class="product_price">¥ <?php echo h_price($product_price[$i]); ?></p>
-                </div>
-                <div class="calc_area">
-                    <p class="txt_quantity">購入数 : </p>
-                    <p>
-                        <select name="quantity<?php echo $i; ?>" class="select_number" onchange="this.form.submit()">
-                        <?php for ($j = 0; $j < 10; $j++): ?>
-                            <option value="<?php echo $j; ?>"<?php if ($j == $quantity[$i]) { echo ' selected'; }?>><?php if ($j == 0) { echo $j . '（削除）'; } else { echo $j; }  ?></option>
-                        <?php endfor; ?>
-                    </select> 個
-                    </p>
-                    <p class="product_price">¥ <?php echo h_price($quantity[$i] * $product_price[$i]); ?></p>
-                    <input type="hidden" name="cart_max" value="<?php echo $cart_max; ?>">
+                    <div class="detail_area">
+                    <?php if ($product_image[$i] == ''): ?>
+                        <img src="../img/no_image.png" class="product_image" alt="">
+                    <?php else: ?>
+                        <img src="../img/<?php echo h01($product_image[$i]); ?>" class="product_image" alt="">
+                    <?php endif; ?>
+                        <p class="product_name"><?php echo h01($product_name[$i]); ?></p>
+                        <p class="product_price">¥ <?php echo h_price($product_price[$i]); ?></p>
+                    </div>
+                    <div class="calc_area">
+                        <p class="txt_quantity">購入数 : </p>
+                        <p>
+                            <select name="quantity<?php echo $i; ?>" class="select_number" onchange="this.form.submit()">
+                            <?php for ($j = 0; $j < 10; $j++): ?>
+                                <option value="<?php echo $j; ?>"<?php if ($j == $quantity[$i]) { echo ' selected'; }?>><?php if ($j == 0) { echo $j . '（削除）'; } else { echo $j; }  ?></option>
+                            <?php endfor; ?>
+                        </select> 個
+                        </p>
+                        <p class="product_price">¥ <?php echo h_price($quantity[$i] * $product_price[$i]); ?></p>
+                        <input type="hidden" name="cart_max" value="<?php echo $cart_max; ?>">
+                    </div>
                 </div>
             <?php endfor; ?>
             </form>

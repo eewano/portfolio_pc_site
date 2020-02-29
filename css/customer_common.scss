@@ -124,57 +124,65 @@ main {
         @include mq(md) {
             grid-template-columns: 1fr;
         }
-        
+
         .cart_box {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto auto;
-            border-top: 1px solid #404040;
-            border-bottom: 1px dashed #404040;
-            border-left: 1px solid #404040;
-            border-right: 1px solid #404040;
-            padding: 10px;
+            margin-bottom: 20px;
 
-            .product_image {
-                grid-row-end: span 2;
-                width: 100%;
+            &:last-child {
+                margin-bottom: 0;
             }
-
-            .product_name {
+        
+            .detail_area {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+                border-top: 1px solid #404040;
+                border-bottom: 1px dashed #404040;
+                border-left: 1px solid #404040;
+                border-right: 1px solid #404040;
+                padding: 10px;
+    
+                .product_image {
+                    grid-row-end: span 2;
+                    width: 100%;
+                }
+    
+                .product_name {
+                    font-weight: bold;
+                    margin-left: 20px;
+                }
+            }
+    
+            .calc_area {
+                display: grid;
+                grid-template-columns: 1fr 1fr 2fr;
+                grid-template-rows: auto;
+                border-bottom: 1px solid #404040;
+                border-left: 1px solid #404040;
+                border-right: 1px solid #404040;
+    
+                p {
+                    margin-left: 20px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+    
+                    .select_number {
+                        background-color: #dddddd;
+                    }
+                }
+    
+                .txt_quantity {
+                    text-align: right;
+                    margin-left: 0;
+                    margin-right: 20px;
+                }
+            }
+    
+            .product_price {
+                color: #ff0000;
                 font-weight: bold;
                 margin-left: 20px;
             }
-        }
-
-        .calc_area {
-            display: grid;
-            grid-template-columns: 1fr 1fr 2fr;
-            grid-template-rows: auto;
-            border-bottom: 1px solid #404040;
-            border-left: 1px solid #404040;
-            border-right: 1px solid #404040;
-
-            p {
-                margin-left: 20px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-
-                .select_number {
-                    background-color: #dddddd;
-                }
-            }
-
-            .txt_quantity {
-                text-align: right;
-                margin-left: 0;
-                margin-right: 20px;
-            }
-        }
-
-        .product_price {
-            color: #ff0000;
-            font-weight: bold;
-            margin-left: 20px;
         }
     }
     // ↑カート一覧表示↑

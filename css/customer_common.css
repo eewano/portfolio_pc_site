@@ -134,6 +134,14 @@ main .cart_list_area {
 }
 
 main .cart_list_area .cart_box {
+  margin-bottom: 20px;
+}
+
+main .cart_list_area .cart_box:last-child {
+  margin-bottom: 0;
+}
+
+main .cart_list_area .cart_box .detail_area {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -147,18 +155,18 @@ main .cart_list_area .cart_box {
   padding: 10px;
 }
 
-main .cart_list_area .cart_box .product_image {
+main .cart_list_area .cart_box .detail_area .product_image {
   -ms-grid-row-span: 2;
       grid-row-end: span 2;
   width: 100%;
 }
 
-main .cart_list_area .cart_box .product_name {
+main .cart_list_area .cart_box .detail_area .product_name {
   font-weight: bold;
   margin-left: 20px;
 }
 
-main .cart_list_area .calc_area {
+main .cart_list_area .cart_box .calc_area {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 2fr;
@@ -170,23 +178,23 @@ main .cart_list_area .calc_area {
   border-right: 1px solid #404040;
 }
 
-main .cart_list_area .calc_area p {
+main .cart_list_area .cart_box .calc_area p {
   margin-left: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-main .cart_list_area .calc_area p .select_number {
+main .cart_list_area .cart_box .calc_area p .select_number {
   background-color: #dddddd;
 }
 
-main .cart_list_area .calc_area .txt_quantity {
+main .cart_list_area .cart_box .calc_area .txt_quantity {
   text-align: right;
   margin-left: 0;
   margin-right: 20px;
 }
 
-main .cart_list_area .product_price {
+main .cart_list_area .cart_box .product_price {
   color: #ff0000;
   font-weight: bold;
   margin-left: 20px;
