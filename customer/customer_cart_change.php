@@ -10,9 +10,6 @@ $post = sanitize($_POST);
 
 $cart_max = $post['cart_max'];
 
-print '$cart_max = ' . $cart_max;
-print '<br>';
-
 for ($i = 0; $i < $cart_max; $i++) {
     $quantity[] = $post['quantity' . $i];
 }
