@@ -340,6 +340,16 @@ main .other_area {
   margin-right: auto;
 }
 
+main .other_area h2 {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+main .other_area h2 .txt_total_price {
+  color: #ff0000;
+  padding-left: 20px;
+}
+
 main .other_area h3 {
   text-align: center;
 }

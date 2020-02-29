@@ -53,6 +53,12 @@ try {
         $product_price[] = $rec['price'];
     }
 
+    $total_price = 0;
+
+    for ($i = 0; $i < $cart_max; $i++) {
+        $total_price = $total_price + ($product_price[$i] * $quantity[$i]);
+    }
+
     $dbh = null;
 
 } catch (Exception $e) {
@@ -126,6 +132,7 @@ try {
             </form>
         </div>
         <div class="other_area">
+            <h2>ご請求額 : <span class="txt_total_price">¥ <?php echo h_price($total_price); ?></span></h3>
             <h3>以上の内容で購入手続き致します。宜しいですか？</h3>
             <a href="<?php echo get_url(); ?>/customer/customer_form.php" class="btn_link btn_long register">ご購入手続きへ進む</a>
             <a href="<?php echo get_url(); ?>/index.php" class="btn_link btn_long return">トップに戻る</a>
