@@ -7,60 +7,69 @@ footer {
     grid-column-end: right;
     grid-row-start: foot;
 
-    max-width: 1140px;
     background-color: #84e2ff;
     border: 2px solid #000000;
     margin-top: 100px;
 
     .footer_layout {
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr;
         grid-template-rows: auto;
 
-        @include mq(md) {
-            grid-template-columns: 1fr;
+        @include mq(col-md) {
+            grid-template-columns: 1fr 2fr;
         }
 
         h1 {
-            justify-self: start;
+            justify-self: stretch;
+            margin-left: 0;
             align-self: center;
-            font-size: 40px;
+            font-size: 2.8rem;
             font-weight: 800;
             -webkit-text-stroke: 2px #ffffff;
             margin-top: 40px;
             letter-spacing: -4px;
             text-align: center;
-            margin-left: 40px;
 
-            @include mq(md) {
-                justify-self: stretch;
-                margin-left: 0;
+            @include mq(col-md) {
+                font-size: 3.2rem;
+                justify-self: start;
+                margin-left: 40px;
             }
         }
     
         .portfolio_site {
-            justify-self: end;
+            justify-self: stretch;
+            margin-right: 0;
             align-self: center;
-            font-size: 14px;
+            font-size: 1.3rem;
             text-align: center;
             margin-top: 40px;
-            margin-right: 40px;
+            margin-right: 0;
 
-            @include mq(md) {
-                justify-self: stretch;
-                margin-right: 0;
+            @include mq(col) {
+                font-size: 1rem;
+            }
+
+            @include mq(col-md) {
+                justify-self: end;
+                margin-right: 40px;
             }
         }
     }
 
     .copyright {
-        font-size: 14px;
+        font-size: 1.3rem;
         text-align: center;
         margin-top: 40px;
         margin-bottom: 40px;
+
+        @include mq(col) {
+            font-size: 1rem;
+        }
     }
 
-    @include mq(xg) {
+    @include mq(col-xl) {
         grid-column-start: mainStart;
         grid-column-end: mainEnd;
     }
