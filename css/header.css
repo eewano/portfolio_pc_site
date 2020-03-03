@@ -1,8 +1,8 @@
 body {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1140px) [mainEnd] minmax(20px, 1fr) [right];
-      grid-template-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1140px) [mainEnd] minmax(20px, 1fr) [right];
+  -ms-grid-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1200px) [mainEnd] minmax(20px, 1fr) [right];
+      grid-template-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1200px) [mainEnd] minmax(20px, 1fr) [right];
   -ms-grid-rows: [head] auto [head] auto [img] auto [admin] auto [title] auto [main] auto [foot] auto [bottom];
       grid-template-rows: [head] auto [head] auto [img] auto [admin] auto [title] auto [main] auto [foot] auto [bottom];
 }
@@ -13,18 +13,18 @@ header {
   grid-column-end: right;
   -ms-grid-row: head;
       grid-row-start: head;
-  height: 80px;
+  height: 60px;
   background-color: #84e2ff;
   border: 2px solid #000000;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (min-width: 992px) {
   header {
-    height: 60px;
+    height: 80px;
   }
 }
 
-@media screen and (min-width: 1140px) {
+@media screen and (min-width: 1200px) {
   header {
     -ms-grid-column: mainStart;
         grid-column-start: mainStart;
@@ -33,17 +33,17 @@ header {
 }
 
 header h1 {
-  font-size: 60px;
+  font-size: 2.8rem;
   font-weight: 800;
   letter-spacing: -4px;
   margin-left: 10px;
-  line-height: 80px;
+  line-height: 60px;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (min-width: 992px) {
   header h1 {
-    font-size: 40px;
-    line-height: 60px;
+    font-size: 3.8rem;
+    line-height: 80px;
   }
 }
 
@@ -66,13 +66,13 @@ button {
       align-self: center;
   width: 32px;
   height: 32px;
-  display: none;
+  display: block;
   cursor: pointer;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (min-width: 768px) {
   button {
-    display: block;
+    display: none;
   }
 }
 
@@ -85,29 +85,29 @@ button img {
   -ms-grid-column: left;
       grid-column-start: left;
   grid-column-end: right;
-  -ms-grid-row: head;
-      grid-row-start: head;
-  -ms-grid-column-align: end;
-      justify-self: end;
+  -ms-grid-row: head 2;
+      grid-row-start: head 2;
+  -ms-grid-column-align: stretch;
+      justify-self: stretch;
+  max-height: 0;
+  margin-right: 0;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  margin-right: 20px;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (min-width: 768px) {
   .menu_area {
-    -ms-grid-row: head 2;
-        grid-row-start: head 2;
-    -ms-grid-column-align: stretch;
-        justify-self: stretch;
-    max-height: 0;
-    overflow: hidden;
-    margin-right: 0;
+    -ms-grid-row: head;
+        grid-row-start: head;
+    -ms-grid-column-align: end;
+        justify-self: end;
+    max-height: initial;
+    margin-right: 20px;
   }
 }
 
-@media screen and (min-width: 1140px) {
+@media screen and (min-width: 1200px) {
   .menu_area {
     -ms-grid-column: mainStart;
         grid-column-start: mainStart;
@@ -116,20 +116,23 @@ button img {
 }
 
 .menu_area ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (min-width: 768px) {
   .menu_area ul {
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    font-size: 1.2rem;
   }
 }
 
@@ -160,7 +163,7 @@ button img {
   vertical-align: bottom;
 }
 
-@media screen and (min-width: 1140px) {
+@media screen and (min-width: 1200px) {
   .top_image_area {
     -ms-grid-column: mainStart;
         grid-column-start: mainStart;

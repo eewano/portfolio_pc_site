@@ -6,30 +6,29 @@ header {
     grid-column-start: left;
     grid-column-end: right;
     grid-row-start: head;
-    
-    height: 80px;
+    height: 60px;
     background-color: #84e2ff;
     border: 2px solid #000000;
 
-    @include mq(md) {
-        height: 60px;
+    @include mq(col-lg) {
+        height: 80px;
     }
 
-    @include mq(xg) {
+    @include mq(col-xl) {
         grid-column-start: mainStart;
         grid-column-end: mainEnd;
     }
 
     h1 {
-        font-size: 60px;
+        font-size: 2.8rem;
         font-weight: 800;
         letter-spacing: -4px;
         margin-left: 10px;
-        line-height: 80px;
+        line-height: 60px;
 
-        @include mq(md) {
-            font-size: 40px;
-            line-height: 60px;
+        @include mq(col-lg) {
+            font-size: 3.8rem;
+            line-height: 80px;
         }
 
         a {
@@ -49,11 +48,11 @@ button {
     width: 32px;
     height: 32px;
 
-    display: none;
+    display: block;
     cursor: pointer;
 
-    @include mq(md) {
-        display: block;
+    @include mq(col-md) {
+        display: none;
     }
 
     img {
@@ -65,32 +64,32 @@ button {
 .menu_area {
     grid-column-start: left;
     grid-column-end: right;
-    grid-row-start: head;
-    justify-self: end;
+    grid-row-start: head 2;
+    justify-self: stretch;
+    max-height: 0;
+    margin-right: 0;
     align-self: center;
-    margin-right: 20px;
 
-    @include mq(md) {
-        grid-row-start: head 2;
-        justify-self: stretch;
-        max-height: 0;
-        overflow: hidden;
-        margin-right: 0;
+    @include mq(col-md) {
+        grid-row-start: head;
+        justify-self: end;
+        max-height: initial;
+        margin-right: 20px;
     }
 
-    @include mq(xg) {
+    @include mq(col-xl) {
         grid-column-start: mainStart;
         grid-column-end: mainEnd;
     }
 
     ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
         display: flex;
+        flex-direction: column;
+        list-style: none;
 
-        @include mq(md) {
-            flex-direction: column;
+        @include mq(col-md) {
+            flex-direction: row;
+            font-size: 1.2rem;
         }
 
         a {
@@ -119,7 +118,7 @@ button {
         vertical-align: bottom;
     }
 
-    @include mq(xg) {
+    @include mq(col-xl) {
         grid-column-start: mainStart;
         grid-column-end: mainEnd;
     }
