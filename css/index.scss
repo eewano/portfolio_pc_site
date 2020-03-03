@@ -11,7 +11,7 @@
     }
 
     .product_name {
-        font-size: 14px;
+        font-size: 1.1rem;
         margin-top: 20px;
     }
 
@@ -57,20 +57,40 @@
         text-align: center;
         margin-left: auto;
         margin-right: auto;
+
+        @include mq(col-sm) {
+            font-size: 1.3rem;
+        }
     }
 
     h2 {
-        font-size: 24px;
+        font-size: 1.5rem;
         font-weight: bold;
         text-align: center;
         margin-top: 60px;
+
+        @include mq(col-sm) {
+            font-size: 2rem;
+        }
+
+        @include mq(col-lg) {
+            font-size: 3rem;
+        }
     }
 
     h3 {
-        font-size: 20px;
+        font-size: 1.3rem;
         text-align: center;
         margin-top: 60px;
         margin-bottom: 20px;
+
+        @include mq(col-sm) {
+            font-size: 1.5rem;
+        }
+
+        @include mq(col-lg) {
+            font-size: 2rem;
+        }
     }
 }
 // ↑タイトル表示エリア↑
@@ -82,17 +102,17 @@ main {
 
     .product_list_area {
         display: grid;
-        grid-template-columns:1fr 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-column-gap: 20px;
         grid-row-gap: 20px;
-
-        @include mq(md) {
-            grid-template-columns: 1fr 1fr;
-        }
     
-        @include mq(sm) {
-            grid-template-columns: 1fr;
+        @include mq(col-sm) {
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 20px;
+        }
+
+        @include mq(col-lg) {
+            grid-template-columns: 1fr 1fr 1fr;
         }
 
         .product_box {
