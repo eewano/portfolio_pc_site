@@ -1,12 +1,20 @@
 @charset "UTF-8";
 
 $breakpoints: (
-    'sm': 'screen and (max-width: 480px)',
-    'md': 'screen and (max-width: 750px)',
-    'ml': 'screen and (max-width: 799px)',
-    'lg': 'screen and (max-width: 960px)',
-    'xg': 'screen and (min-width: 1140px)'
+    'col': 'screen and (max-width: 575px)',
+    'col-sm': 'screen and (min-width: 576px)',
+    'col-md': 'screen and (min-width: 768px)',
+    'col-lg': 'screen and (min-width: 992px)',
+    'col-xl': 'screen and (min-width: 1200px)'
 ) !default;
+
+// $breakpoints: (
+//     'sm': 'screen and (max-width: 480px)',
+//     'md': 'screen and (max-width: 750px)',
+//     'ml': 'screen and (max-width: 799px)',
+//     'lg': 'screen and (max-width: 960px)',
+//     'xg': 'screen and (min-width: 1140px)'
+// ) !default;
 
 @mixin mq($breakpoint: md) {
     @media #{map-get($breakpoints, $breakpoint)} {
@@ -18,7 +26,7 @@ body {
     display: grid;
     grid-template-columns:
         [left] minmax(20px, 1fr)
-        [mainStart] minmax(auto, 1140px)
+        [mainStart] minmax(auto, 1200px)
         [mainEnd] minmax(20px, 1fr)
         [right];
 
