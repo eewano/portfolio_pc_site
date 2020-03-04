@@ -11,7 +11,7 @@
     }
 
     .product_name {
-        font-size: 14px;
+        font-size: 1.1rem;
         margin-top: 20px;
     }
 
@@ -47,7 +47,7 @@
 
 @mixin link_button_parts() {
     width: 100%;
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: bold;
     text-align: center;
     padding: 10px 20px;
@@ -73,16 +73,19 @@
     border: solid #000000;
     border-width: 0px 2px 2px 2px;
 
-    @include mq(xg) {
+    @include mq(col-xl) {
         grid-column-start: mainStart;
         grid-column-end: mainEnd;
     }
 
     p {
         color: #ffffff;
-        font-size: 18px;
         font-weight: bold;
         text-align: center;
+
+        @include mq(col-md) {
+            font-size: 1.2rem;
+        }
     }
 }
 // ↑管理者オレンジマーク↑
@@ -94,17 +97,32 @@
     grid-row-start: title;
 
     h2 {
-        font-size: 24px;
+        font-size: 1.5rem;
         font-weight: bold;
         text-align: center;
         margin-top: 60px;
+
+        @include mq(col-sm) {
+            font-size: 2rem;
+        }
+
+        @include mq(col-lg) {
+            font-size: 3rem;
+        }
     }
 
     h3 {
-        font-size: 20px;
+        font-size: 1.3rem;
         text-align: center;
         margin-top: 60px;
-        margin-bottom: 20px;
+
+        @include mq(col-sm) {
+            font-size: 1.5rem;
+        }
+
+        @include mq(col-lg) {
+            font-size: 2rem;
+        }
     }
 }
 // ↑タイトル表示エリア↑
@@ -117,17 +135,18 @@ main {
     // ↓商品陳列表示↓
     .product_list_area {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-column-gap: 20px;
         grid-row-gap: 20px;
-
-        @include mq(md) {
-            grid-template-columns: 1fr 1fr;
-        }
+        padding-top: 60px;
     
-        @include mq(sm) {
-            grid-template-columns: 1fr;
+        @include mq(col-sm) {
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 20px;
+        }
+
+        @include mq(col-lg) {
+            grid-template-columns: 1fr 1fr 1fr;
         }
 
         .product_box {
@@ -148,8 +167,8 @@ main {
 
     // ↓商品単品表示↓
     .product_pickup_area {
-        padding-top: 40px;
         max-width: 480px;
+        margin-top: 60px;
         margin-left: auto;
         margin-right: auto;
     
@@ -164,7 +183,7 @@ main {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin-top: 30px;
+                margin-top: 60px;
                 @include link_button_parts();
             }
         }
@@ -174,13 +193,16 @@ main {
     // ↓入力エリア表示↓
     .input_area {
         max-width: 640px;
-        padding-top: 40px;
+        margin-top: 60px;
         margin-left: auto;
         margin-right: auto;
 
         p {
-            font-size: 14px;
             margin-top: 20px;
+
+            @include mq(col-md) {
+                font-size: 1.1rem;
+            }
         }
 
         .input_space {
@@ -189,6 +211,10 @@ main {
             height: 30px;
             margin-top: 10px;
             padding-left: 5px;
+
+            @include mq(col-md) {
+                height: 40px;
+            }
 
             &.type_detail {
                 height: 140px;
@@ -199,12 +225,12 @@ main {
     
         .button_area_double {
             @include btn_area_double_parts();
+            margin-top: 60px;
 
             .btn_link {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin-top: 30px;
                 @include link_button_parts();
             }
         }
@@ -212,8 +238,8 @@ main {
     // ↑入力エリア表示↑
 
     .other_area {
-        padding-top: 40px;
         max-width: 480px;
+        margin-top: 60px;
         margin-left: auto;
         margin-right: auto;
 
