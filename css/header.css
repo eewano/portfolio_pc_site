@@ -53,6 +53,10 @@ header h1 a {
   -webkit-text-stroke: 2px #ffffff;
 }
 
+header.admin_mode {
+  background-color: #7eff9f;
+}
+
 button {
   -ms-grid-column: mainStart;
       grid-column-start: mainStart;

@@ -105,4 +105,8 @@ footer .copyright {
     grid-column-end: mainEnd;
   }
 }
+
+footer.admin_mode {
+  background-color: #7eff9f;
+}
 /*# sourceMappingURL=footer.css.map */
