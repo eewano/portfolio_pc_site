@@ -69,11 +69,11 @@ main {
   grid-column-end: mainEnd;
   -ms-grid-row: main;
       grid-row-start: main;
-  padding-top: 60px;
 }
 
 main .product_pickup_area {
   max-width: 480px;
+  margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -151,6 +151,7 @@ main .product_pickup_area .button_area_double .btn_link:hover {
 main .cart_list_area {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
+  margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -230,6 +231,7 @@ main .cart_list_area .cart_box .product_price {
 
 main .input_area {
   max-width: 640px;
+  margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -294,6 +296,7 @@ main .input_area .button_area_double .btn_link:hover {
 
 main .register_area {
   max-width: 480px;
+  margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -376,6 +379,7 @@ main .register_area .button_area_double .btn_link:hover {
 }
 
 main .other_area {
+  margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
 }

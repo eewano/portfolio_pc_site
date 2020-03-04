@@ -98,13 +98,13 @@ main {
     grid-column-start: mainStart;
     grid-column-end: mainEnd;
     grid-row-start: main;
-    margin-top: 60px;
 
     .product_list_area {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         grid-row-gap: 20px;
+        margin-top: 60px;
     
         @include mq(col-sm) {
             grid-template-columns: 1fr 1fr;
