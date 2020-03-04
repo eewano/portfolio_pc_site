@@ -59,7 +59,7 @@ try {
 
 ?>
 
-    <header>
+    <header class="admin_mode">
         <h1 class="header_logo">
             <a href="#">PC e2wn</a>
         </h1>
@@ -124,7 +124,7 @@ try {
         </form>
     </main>
 
-    <footer>
+    <footer class="admin_mode">
         <div class="footer_layout">
             <h1>PC e2wn</h1>
             <p class="portfolio_site">eewano Portfolio Site</p>
