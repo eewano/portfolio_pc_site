@@ -54,7 +54,6 @@ body {
   font-size: 1.3rem;
   text-align: center;
   margin-top: 60px;
-  margin-bottom: 20px;
 }
 
 @media screen and (min-width: 576px) {
@@ -75,6 +74,7 @@ main {
   grid-column-end: mainEnd;
   -ms-grid-row: main;
       grid-row-start: main;
+  margin-top: 60px;
 }
 
 main .product_list_area {

@@ -82,7 +82,6 @@
         font-size: 1.3rem;
         text-align: center;
         margin-top: 60px;
-        margin-bottom: 20px;
 
         @include mq(col-sm) {
             font-size: 1.5rem;
@@ -99,6 +98,7 @@ main {
     grid-column-start: mainStart;
     grid-column-end: mainEnd;
     grid-row-start: main;
+    margin-top: 60px;
 
     .product_list_area {
         display: grid;
