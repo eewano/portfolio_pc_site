@@ -1,8 +1,8 @@
 body {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1140px) [mainEnd] minmax(20px, 1fr) [right];
-      grid-template-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1140px) [mainEnd] minmax(20px, 1fr) [right];
+  -ms-grid-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1200px) [mainEnd] minmax(20px, 1fr) [right];
+      grid-template-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1200px) [mainEnd] minmax(20px, 1fr) [right];
   -ms-grid-rows: [head] auto [head] auto [img] auto [admin] auto [title] auto [main] auto [foot] auto [bottom];
       grid-template-rows: [head] auto [head] auto [img] auto [admin] auto [title] auto [main] auto [foot] auto [bottom];
 }
@@ -16,22 +16,51 @@ body {
 }
 
 .title_area h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
   margin-top: 60px;
 }
 
+@media screen and (min-width: 576px) {
+  .title_area h2 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .title_area h2 {
+    font-size: 3rem;
+  }
+}
+
 .title_area h3 {
-  font-size: 20px;
+  font-size: 1.3rem;
   text-align: center;
   margin-top: 60px;
-  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 576px) {
+  .title_area h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .title_area h3 {
+    font-size: 2rem;
+  }
 }
 
 .title_area p {
-  font-size: 14px;
+  margin-top: 60px;
   text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .title_area p {
+    font-size: 1.3rem;
+  }
 }
 
 main {
@@ -40,10 +69,10 @@ main {
   grid-column-end: mainEnd;
   -ms-grid-row: main;
       grid-row-start: main;
+  padding-top: 60px;
 }
 
 main .product_pickup_area {
-  padding-top: 40px;
   max-width: 480px;
   margin-left: auto;
   margin-right: auto;
@@ -59,7 +88,7 @@ main .product_pickup_area .product_box img {
 }
 
 main .product_pickup_area .product_box .product_name {
-  font-size: 14px;
+  font-size: 1.1rem;
   margin-top: 20px;
 }
 
@@ -105,9 +134,9 @@ main .product_pickup_area .button_area_double .btn_link {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 30px;
+  margin-top: 60px;
   width: 100%;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: bold;
   text-align: center;
   padding: 10px 20px;
@@ -120,16 +149,15 @@ main .product_pickup_area .button_area_double .btn_link:hover {
 }
 
 main .cart_list_area {
-  padding-top: 40px;
-  max-width: 640px;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
   margin-left: auto;
   margin-right: auto;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (min-width: 768px) {
   main .cart_list_area {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    max-width: 640px;
   }
 }
 
@@ -202,14 +230,18 @@ main .cart_list_area .cart_box .product_price {
 
 main .input_area {
   max-width: 640px;
-  padding-top: 40px;
   margin-left: auto;
   margin-right: auto;
 }
 
 main .input_area p {
-  font-size: 14px;
   margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  main .input_area p {
+    font-size: 1.1rem;
+  }
 }
 
 main .input_area .input_space {
@@ -218,6 +250,12 @@ main .input_area .input_space {
   height: 30px;
   margin-top: 10px;
   padding-left: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  main .input_area .input_space {
+    height: 40px;
+  }
 }
 
 main .input_area .button_area_double {
@@ -240,9 +278,9 @@ main .input_area .button_area_double .btn_link {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 30px;
+  margin-top: 60px;
   width: 100%;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: bold;
   text-align: center;
   padding: 10px 20px;
@@ -255,7 +293,6 @@ main .input_area .button_area_double .btn_link:hover {
 }
 
 main .register_area {
-  padding-top: 40px;
   max-width: 480px;
   margin-left: auto;
   margin-right: auto;
@@ -270,7 +307,7 @@ main .register_area .register_box {
       grid-template-rows: auto;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 575px) {
   main .register_area .register_box {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -278,20 +315,25 @@ main .register_area .register_box {
 }
 
 main .register_area .register_box p {
-  font-size: 14px;
   margin-top: 20px;
   text-align: justify;
   text-justify: inter-ideograph;
 }
 
-main .register_area .register_box p.item {
-  font-weight: bold;
-  text-align: right;
+@media screen and (min-width: 768px) {
+  main .register_area .register_box p {
+    font-size: 1.1rem;
+  }
 }
 
-@media screen and (max-width: 750px) {
+main .register_area .register_box p.item {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
   main .register_area .register_box p.item {
-    text-align: initial;
+    text-align: right;
   }
 }
 
@@ -319,9 +361,9 @@ main .register_area .button_area_double .btn_link {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 30px;
+  margin-top: 60px;
   width: 100%;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: bold;
   text-align: center;
   padding: 10px 20px;
@@ -334,14 +376,12 @@ main .register_area .button_area_double .btn_link:hover {
 }
 
 main .other_area {
-  padding-top: 80px;
-  max-width: 480px;
   margin-left: auto;
   margin-right: auto;
 }
 
 main .other_area h2 {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -350,19 +390,46 @@ main .other_area h2 .txt_total_price {
   padding-left: 20px;
 }
 
+@media screen and (min-width: 576px) {
+  main .other_area h2 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  main .other_area h2 {
+    font-size: 3rem;
+  }
+}
+
 main .other_area h3 {
   text-align: center;
 }
 
+@media screen and (min-width: 576px) {
+  main .other_area h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  main .other_area h3 {
+    font-size: 2rem;
+  }
+}
+
 main .other_area .btn_link {
+  max-width: 480px;
   display: block;
   width: 100%;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: bold;
   text-align: center;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 main .other_area .btn_link:hover {

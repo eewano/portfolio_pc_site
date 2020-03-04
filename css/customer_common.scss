@@ -11,7 +11,7 @@
     }
 
     .product_name {
-        font-size: 14px;
+        font-size: 1.1rem;
         margin-top: 20px;
     }
 
@@ -47,7 +47,7 @@
 
 @mixin link_button_parts() {
     width: 100%;
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: bold;
     text-align: center;
     padding: 10px 20px;
@@ -65,22 +65,41 @@
     grid-row-start: title;
 
     h2 {
-        font-size: 24px;
+        font-size: 1.5rem;
         font-weight: bold;
         text-align: center;
         margin-top: 60px;
+
+        @include mq(col-sm) {
+            font-size: 2rem;
+        }
+
+        @include mq(col-lg) {
+            font-size: 3rem;
+        }
     }
 
     h3 {
-        font-size: 20px;
+        font-size: 1.3rem;
         text-align: center;
         margin-top: 60px;
-        margin-bottom: 20px;
+
+        @include mq(col-sm) {
+            font-size: 1.5rem;
+        }
+
+        @include mq(col-lg) {
+            font-size: 2rem;
+        }
     }
 
     p {
-        font-size: 14px;
+        margin-top: 60px;
         text-align: center;
+
+        @include mq(col-md) {
+            font-size: 1.3rem;
+        }
     }
 }
 
@@ -88,10 +107,10 @@ main {
     grid-column-start: mainStart;
     grid-column-end: mainEnd;
     grid-row-start: main;
+    padding-top: 60px;
 
     // ↓商品単品表示↓
     .product_pickup_area {
-        padding-top: 40px;
         max-width: 480px;
         margin-left: auto;
         margin-right: auto;
@@ -107,7 +126,7 @@ main {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin-top: 30px;
+                margin-top: 60px;
                 @include link_button_parts();
             }
         }
@@ -116,13 +135,12 @@ main {
 
     // ↓カート一覧表示↓
     .cart_list_area {
-        padding-top: 40px;
-        max-width: 640px;
+        grid-template-columns: 1fr;
         margin-left: auto;
         margin-right: auto;
 
-        @include mq(md) {
-            grid-template-columns: 1fr;
+        @include mq(col-md) {
+            max-width: 640px;
         }
 
         .cart_box {
@@ -190,13 +208,15 @@ main {
     // ↓入力フォーム表示↓
     .input_area {
         max-width: 640px;
-        padding-top: 40px;
         margin-left: auto;
         margin-right: auto;
 
         p {
-            font-size: 14px;
             margin-top: 20px;
+
+            @include mq(col-md) {
+                font-size: 1.1rem;
+            }
         }
 
         .input_space {
@@ -205,6 +225,10 @@ main {
             height: 30px;
             margin-top: 10px;
             padding-left: 5px;
+
+            @include mq(col-md) {
+                height: 40px;
+            }
         }
     
         .button_area_double {
@@ -214,7 +238,7 @@ main {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin-top: 30px;
+                margin-top: 60px;
                 @include link_button_parts();
             }
         }
@@ -223,7 +247,6 @@ main {
 
     // ↓送信確認表示↓
     .register_area {
-        padding-top: 40px;
         max-width: 480px;
         margin-left: auto;
         margin-right: auto;
@@ -233,22 +256,25 @@ main {
             grid-template-columns: 1fr 2fr;
             grid-template-rows: auto;
 
-            @include mq(md) {
+            @include mq(col) {
                 grid-template-columns: 1fr;
             }
 
             p {
-                font-size: 14px;
                 margin-top: 20px;
                 text-align: justify;
                 text-justify: inter-ideograph;
 
-                &.item {
-                    font-weight: bold;
-                    text-align: right;
+                @include mq(col-md) {
+                    font-size: 1.1rem;
+                }
 
-                    @include mq(md) {
-                        text-align: initial;
+                &.item {
+                    font-size: 1.1rem;
+                    font-weight: bold;
+
+                    @include mq(col-md) {
+                        text-align: right;
                     }
                 }
 
@@ -265,7 +291,7 @@ main {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin-top: 30px;
+                margin-top: 60px;
                 @include link_button_parts();
             }
         }
@@ -273,28 +299,45 @@ main {
     // ↑送信確認表示↑
 
     .other_area {
-        padding-top: 80px;
-        max-width: 480px;
         margin-left: auto;
         margin-right: auto;
 
         h2 {
-            margin-bottom: 80px;
+            margin-bottom: 40px;
             text-align: center;
 
             .txt_total_price {
                 color: #ff0000;
                 padding-left: 20px;
             }
+
+            @include mq(col-sm) {
+                font-size: 2rem;
+            }
+    
+            @include mq(col-lg) {
+                font-size: 3rem;
+            }
         }
 
         h3 {
             text-align: center;
+
+            @include mq(col-sm) {
+                font-size: 1.5rem;
+            }
+    
+            @include mq(col-lg) {
+                font-size: 2rem;
+            }
         }
 
         .btn_link {
+            max-width: 480px;
             display: block;
             @include link_button_parts();
+            margin-left: auto;
+            margin-right: auto;
 
             &.btn_long {
                 margin-top: 80px;
