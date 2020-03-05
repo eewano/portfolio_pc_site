@@ -252,10 +252,25 @@ main {
         margin-right: auto;
 
         p {
+            float: none;
             margin-top: 20px;
 
             @include mq(col-md) {
+                float: left;
                 font-size: 1.1rem;
+            }
+        }
+
+        .err_message {
+            float: none;
+            color: #ff0000;
+            margin-top: 3px;
+
+            @include mq(col-md) {
+                float: left;
+                font-size: 1.1rem;
+                margin-top: 20px;
+                margin-left: 20px;
             }
         }
 
@@ -268,6 +283,12 @@ main {
 
             @include mq(col-md) {
                 height: 40px;
+
+                &:after {
+                    content: '';
+                    display: block;
+                    clear: both;
+                }
             }
         }
     

@@ -11,30 +11,59 @@ $customer_postal_code = $post['customer_postal_code'];
 $customer_address = $post['customer_address'];
 $customer_tel = $post['customer_tel'];
 
+$inputted_data = array(
+    'inputted_customer_name' => $customer_name,
+    'inputted_customer_email' => $customer_email,
+    'inputted_customer_postal_code' => $customer_postal_code,
+    'inputted_customer_address' => $customer_address,
+    'inputted_customer_tel' => $customer_tel,
+);
+
 $okFlag = true;
+
+$err_message = array();
 
 if ($customer_name == '') {
     $okFlag = false;
+    $err_message[] = '※名前を入力して下さい。';
+} else {
+    $err_message[] = '';
 }
 
 if (preg_match('/^[\w\-\.]+\@[\w\-\.]+\.([a-z]+)$/', $customer_email) == 0) {
     $okFlag = false;
+    $err_message[] = '※無効なメールアドレスです。';
+} else {
+    $err_message[] = '';
 }
 
-if (preg_match('/^[0-9]+$/', $customer_postal_code) == 0) {
+if (preg_match('/^[0-9]{7}$/', $customer_postal_code) == 0) {
     $okFlag = false;
+    $err_message[] = '※7桁の数字のみで入力して下さい。';
+} else {
+    $err_message[] = '';
 }
 
 if ($customer_address == '') {
     $okFlag = false;
+    $err_message[] = '※住所を入力して下さい。';
+} else {
+    $err_message[] = '';
 }
 
-if (preg_match('/^\d{2,5}-?\d{2,5}-?\d{4,5}$/', $customer_tel) == 0) {
+if (preg_match('/^[0-9]{2,4}-[0-9]{2,4}-[0-9]{3,4}$/', $customer_tel) == 0) {
     $okFlag = false;
+    $err_message[] = '※無効な電話番号です。';
+} else {
+    $err_message[] = '';
 }
+
+session_start();
+$_SESSION['err_message'] = $err_message;
+$_SESSION['inputted_data'] = $inputted_data;
 
 if ($okFlag == false) {
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    header('Location: ' . get_url() . '/customer/customer_form.php');
     exit();
 }
 
@@ -105,7 +134,7 @@ if ($okFlag == false) {
                 <input type="hidden" name="customer_address" value="<?php echo h01($customer_address); ?>">
                 <input type="hidden" name="customer_tel" value="<?php echo h01($customer_tel); ?>">
                 <div class="button_area_double">
-                    <input type="button" onclick="history.back()" class="btn_link return" value="1つ前に戻る">
+                    <input type="button" onclick="location.href='<?php echo get_url() . '/customer/customer_form.php'; ?>'" class="btn_link return" value="1つ前に戻る">
                     <input type="submit" class="btn_link register" value="送信">
                 </div>
             </form>
