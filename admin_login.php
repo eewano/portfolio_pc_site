@@ -6,6 +6,12 @@ require_once(__DIR__ . '/method_php/get_user_pass.php');
 session_start();
 session_regenerate_id(true);
 
+if (isset($_SESSION['err_message'])) {
+    $err_message = $_SESSION['err_message'];
+}
+
+unset($_SESSION['err_message']);
+
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +55,9 @@ session_regenerate_id(true);
     <div class="title_area">
         <h2>PCショップ eewano</h2>
         <h3>管理者ログインページ</h3>
+        <?php if ($err_message[0] != ''): ?>
+        <h3 class="login_err_message"><?php echo h01($err_message); ?></h3>
+        <?php endif; ?>
     </div>
 
     <main>

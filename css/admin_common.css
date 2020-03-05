@@ -93,6 +93,13 @@ body {
   }
 }
 
+.title_area .login_err_message {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 60px;
+  color: #ff0000;
+}
+
 main {
   -ms-grid-column: mainStart;
       grid-column-start: mainStart;

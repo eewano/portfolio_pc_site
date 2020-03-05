@@ -26,8 +26,9 @@ try {
 
     $dbh = null;
 
+    session_start();
+
     if (password_verify($admin_pass, $pass)) {
-        session_start();
         $_SESSION['admin_login'] = 1;
         $_SESSION['admin_id'] = $admin_id;
         $_SESSION['admin_name'] = $admin_name;
@@ -35,7 +36,8 @@ try {
         exit();
 
     } else {
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        $_SESSION['err_message'] = '※管理者名もしくはパスワードが間違っています。';
+        header('Location: ' . get_url() . '/admin_login.php');
         exit();
     }
     
