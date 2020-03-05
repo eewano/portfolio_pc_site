@@ -50,6 +50,7 @@ unset($_SESSION['inputted_data']);
 
     <div class="menu_area">
         <ul>
+            <li><a href="<?php echo get_url(); ?>/administrator/admin_top.php">管理者トップ</a></li>
             <li><a href="<?php echo get_url(); ?>/administrator/admin_product_add.php">商品の追加</a></li>
             <li><a href="<?php echo get_url(); ?>/admin_logout.php">ログアウト</a></li>
         </ul>
