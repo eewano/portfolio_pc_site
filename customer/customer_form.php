@@ -19,15 +19,9 @@ require_once(__DIR__ . '/../method_php/method.php');
 require_once(__DIR__ . '/../method_php/get_user_pass.php');
 
 session_start();
-if (isset($_SESSION['err_message'])) {
-    $err_message = $_SESSION['err_message'];
-}
 
-if (isset($_SESSION['inputted_data'])) {
-    $inputted_data = $_SESSION['inputted_data'];
-}
-
-// $inputted_data = $_SESSION['inputted_data'];
+$err_message = $_SESSION['err_message'];
+$inputted_data = $_SESSION['inputted_data'];
 
 unset($_SESSION['err_message']);
 unset($_SESSION['inputted_data']);
