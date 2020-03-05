@@ -187,12 +187,44 @@ main .cart_list_area .cart_box .detail_area {
 main .cart_list_area .cart_box .detail_area .product_image {
   -ms-grid-row-span: 2;
       grid-row-end: span 2;
-  width: 100%;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 575px) {
+  main .cart_list_area .cart_box .detail_area .product_image {
+    width: 100%;
+  }
 }
 
 main .cart_list_area .cart_box .detail_area .product_name {
   font-weight: bold;
   margin-left: 20px;
+}
+
+@media screen and (min-width: 576px) {
+  main .cart_list_area .cart_box .detail_area .product_name {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  main .cart_list_area .cart_box .detail_area .product_name {
+    font-size: 1.5rem;
+  }
+}
+
+main .cart_list_area .cart_box .detail_area .product_price {
+  color: #ff0000;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+@media screen and (min-width: 576px) {
+  main .cart_list_area .cart_box .detail_area .product_price {
+    font-size: 1.3rem;
+  }
 }
 
 main .cart_list_area .cart_box .calc_area {
@@ -207,26 +239,46 @@ main .cart_list_area .cart_box .calc_area {
   border-right: 1px solid #404040;
 }
 
+@media screen and (max-width: 575px) {
+  main .cart_list_area .cart_box .calc_area {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
 main .cart_list_area .cart_box .calc_area p {
-  margin-left: 20px;
+  margin-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-main .cart_list_area .cart_box .calc_area p .select_number {
-  background-color: #dddddd;
-}
-
-main .cart_list_area .cart_box .calc_area .txt_quantity {
+main .cart_list_area .cart_box .calc_area p.txt_quantity {
   text-align: right;
-  margin-left: 0;
-  margin-right: 20px;
 }
 
-main .cart_list_area .cart_box .product_price {
+main .cart_list_area .cart_box .calc_area p.select_number {
+  text-align: left;
+}
+
+main .cart_list_area .cart_box .calc_area .num_area {
+  background-color: #dddddd;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+main .cart_list_area .cart_box .calc_area .product_max_price {
   color: #ff0000;
   font-weight: bold;
   margin-left: 20px;
+}
+
+@media screen and (max-width: 575px) {
+  main .cart_list_area .cart_box .calc_area .product_max_price {
+    -ms-grid-column-span: 2;
+        grid-column-end: span 2;
+    margin-left: 0;
+    text-align: center;
+  }
 }
 
 main .input_area {

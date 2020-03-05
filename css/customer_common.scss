@@ -163,12 +163,36 @@ main {
     
                 .product_image {
                     grid-row-end: span 2;
-                    width: 100%;
+                    width: 70%;
+                    margin-left: auto;
+                    margin-right: auto;
+
+                    @include mq(col) {
+                        width: 100%;
+                    }
                 }
     
                 .product_name {
                     font-weight: bold;
                     margin-left: 20px;
+
+                    @include mq(col-sm) {
+                        font-size: 1.3rem;
+                    }
+
+                    @include mq(col-lg) {
+                        font-size: 1.5rem;
+                    }
+                }
+    
+                .product_price {
+                    color: #ff0000;
+                    font-weight: bold;
+                    margin-left: 20px;
+
+                    @include mq(col-sm) {
+                        font-size: 1.3rem;
+                    }
                 }
             }
     
@@ -179,28 +203,42 @@ main {
                 border-bottom: 1px solid #404040;
                 border-left: 1px solid #404040;
                 border-right: 1px solid #404040;
+
+                @include mq(col) {
+                    grid-template-columns: 1fr 1fr;
+                }
     
                 p {
-                    margin-left: 20px;
+                    margin-left: 10px;
                     padding-top: 10px;
                     padding-bottom: 10px;
+
+                    &.txt_quantity {
+                        text-align: right;
+                    }
     
-                    .select_number {
-                        background-color: #dddddd;
+                    &.select_number {
+                        text-align: left;
                     }
                 }
-    
-                .txt_quantity {
-                    text-align: right;
-                    margin-left: 0;
-                    margin-right: 20px;
+
+                .num_area {
+                    background-color: #dddddd;
+                    padding-left: 5px;
+                    padding-right: 5px;
                 }
-            }
-    
-            .product_price {
-                color: #ff0000;
-                font-weight: bold;
-                margin-left: 20px;
+
+                .product_max_price {
+                    color: #ff0000;
+                    font-weight: bold;
+                    margin-left: 20px;
+
+                    @include mq(col) {
+                        grid-column-end: span 2;
+                        margin-left: 0;
+                        text-align: center;
+                    }
+                }
             }
         }
     }

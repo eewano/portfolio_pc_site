@@ -117,14 +117,14 @@ try {
                     </div>
                     <div class="calc_area">
                         <p class="txt_quantity">購入数 : </p>
-                        <p>
-                            <select name="quantity<?php echo $i; ?>" class="select_number" onchange="this.form.submit()">
+                        <p class="select_number">
+                            <select name="quantity<?php echo $i; ?>" class="num_area" onchange="this.form.submit()">
                             <?php for ($j = 0; $j < 10; $j++): ?>
-                                <option value="<?php echo $j; ?>"<?php if ($j == $quantity[$i]) { echo ' selected'; }?>><?php if ($j == 0) { echo $j . '（削除）'; } else { echo $j; }  ?></option>
+                                <option value="<?php echo $j; ?>"<?php if ($j == $quantity[$i]) { echo ' selected'; }?>><?php if ($j == 0) { echo $j . ' (削除) '; } else { echo $j; }  ?></option>
                             <?php endfor; ?>
                         </select> 個
                         </p>
-                        <p class="product_price">¥ <?php echo h_price($quantity[$i] * $product_price[$i]); ?></p>
+                        <p class="product_max_price">¥ <?php echo h_price($quantity[$i] * $product_price[$i]); ?></p>
                         <input type="hidden" name="cart_max" value="<?php echo $cart_max; ?>">
                     </div>
                 </div>
