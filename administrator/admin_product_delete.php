@@ -105,7 +105,7 @@ try {
                 <input type="hidden" name="product_image" value="<?php echo h01($product_image); ?>">
                 <input type="hidden" name="product_id" value="<?php echo h01($product_id); ?>">
                 <div class="button_area_double">
-                    <input type="button" onclick="history.back()" class="btn_link return" value="1つ前に戻る">
+                    <input type="button" onclick="location.href='<?php echo get_url() . '/administrator/admin_top.php'; ?>'" class="btn_link return" value="1つ前に戻る">
                     <input type="submit" class="btn_link delete" value="削除">
                 </div>
             </form>
