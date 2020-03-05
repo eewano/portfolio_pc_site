@@ -274,12 +274,29 @@ main .input_area {
 }
 
 main .input_area p {
+  float: none;
   margin-top: 20px;
 }
 
 @media screen and (min-width: 768px) {
   main .input_area p {
+    float: left;
     font-size: 1.1rem;
+  }
+}
+
+main .input_area .err_message {
+  float: none;
+  color: #ff0000;
+  margin-top: 3px;
+}
+
+@media screen and (min-width: 768px) {
+  main .input_area .err_message {
+    float: left;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    margin-left: 20px;
   }
 }
 
@@ -294,6 +311,11 @@ main .input_area .input_space {
 @media screen and (min-width: 768px) {
   main .input_area .input_space {
     height: 40px;
+  }
+  main .input_area .input_space:after {
+    content: '';
+    display: block;
+    clear: both;
   }
 }
 

@@ -20,6 +20,13 @@ $product_price = $post['product_price'];
 $product_evaluation = $post['product_evaluation'];
 $product_detail = $post['product_detail'];
 
+$inputted_data = array(
+    'inputted_product_name' => $product_name,
+    'inputted_product_price' => $product_price,
+    'inputted_product_evaluation' => $product_evaluation,
+    'inputted_product_detail' => $product_detail,
+);
+
 $okFlag = true;
 
 if ($product_image['size'] > 0) {
@@ -30,22 +37,37 @@ if ($product_image['size'] > 0) {
 
 if ($product_name == '') {
     $okFlag = false;
+    $err_message[] = '※商品名を入力して下さい。';
+} else {
+    $err_message[] = '';
 }
 
 if (preg_match('/^[0-9]+$/', $product_price) == 0) {
     $okFlag = false;
+    $err_message[] = '※金額が未入力、もしくは無効な値です。';
+} else {
+    $err_message[] = '';
 }
 
 if (preg_match('/^([1-7]{1})$/', $product_evaluation) == 0) {
     $okFlag = false;
+    $err_message[] = '※評価が未入力、もしくは無効な値です。';
+} else {
+    $err_message[] = '';
 }
 
 if ($product_detail == '') {
     $okFlag = false;
+    $err_message[] = '※詳細を記入して下さい。';
+} else {
+    $err_message[] = '';
 }
 
+$_SESSION['err_message'] = $err_message;
+$_SESSION['inputted_data'] = $inputted_data;
+
 if ($okFlag == false) {
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    header('Location: ' . get_url() . '/administrator/admin_product_add.php');
     exit();
 }
 
@@ -118,7 +140,7 @@ if ($okFlag == false) {
                 <input type="hidden" name="product_evaluation" value="<?php echo h01($product_evaluation); ?>">
                 <input type="hidden" name="product_detail" value="<?php echo h01($product_detail); ?>">
                 <div class="button_area_double">
-                    <input type="button" onclick="history.back()" class="btn_link return" value="1つ前に戻る">
+                    <input type="button" onclick="location.href='<?php echo get_url() . '/administrator/admin_product_add.php'; ?>'" class="btn_link return" value="1つ前に戻る">
                     <input type="submit" class="btn_link register" value="登録">
                 </div>
             </form>
