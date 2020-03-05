@@ -10,6 +10,12 @@ admin_login_register($_SESSION['admin_login']);
 
 $admin_name = $_SESSION['admin_name'];
 
+if (isset($_SESSION['err_message'])) {
+    $err_message = $_SESSION['err_message'];
+}
+
+unset($_SESSION['err_message']);
+
 ?>
 
 <!DOCTYPE html>
@@ -110,15 +116,27 @@ try {
             <p style="margin-bottom: 10px; width: 100%;">商品画像</p>
             <input type="file" name="product_image" style="width: 100%;">
             <p>商品名</p>
+            <?php if ($err_message[0] != ''): ?>
+                <p class="err_message"><?php echo h01($err_message[0]); ?></p>
+            <?php endif; ?>
             <input type="text" name="product_name" class="input_space" style="width: 100%" value="<?php echo h01($product_name_old); ?>">
             <p>販売価格（円）</p>
+            <?php if ($err_message[1] != ''): ?>
+                <p class="err_message"><?php echo h01($err_message[1]); ?></p>
+            <?php endif; ?>
             <input type="text" name="product_price" class="input_space" style="width: 100%" value="<?php echo h01($product_price_old); ?>">
             <p>評価</p>
+            <?php if ($err_message[2] != ''): ?>
+                <p class="err_message"><?php echo h01($err_message[2]); ?></p>
+            <?php endif; ?>
             <input type="text" name="product_evaluation" class="input_space" style="width: 100%" value="<?php echo h01($product_evaluation_old); ?>">
             <p>商品の詳細</p>
+            <?php if ($err_message[3] != ''): ?>
+                <p class="err_message"><?php echo h01($err_message[3]); ?></p>
+            <?php endif; ?>
             <textarea name="product_detail" cols="20" rows="10" class="input_space type_detail" style="width: 100%"><?php echo h01($product_detail_old); ?></textarea>
             <div class="button_area_double">
-                <input type="button" onclick="history.back()" class="btn_link return" value="1つ前に戻る">
+                <input type="button" onclick="location.href='<?php echo get_url() . '/administrator/admin_top.php'; ?>'" class="btn_link return" value="1つ前に戻る">
                 <input type="submit" class="btn_link register" value="確認">
             </div>
         </form>
