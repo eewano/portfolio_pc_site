@@ -44,6 +44,11 @@ try {
 
     $dbh = null;
 
+    $err_message = array_fill(0, 4, '');
+    $inputted_data = array_fill(0, 4, '');
+    $_SESSION['err_message'] = $err_message;
+    $_SESSION['inputted_data'] = $inputted_data;
+
 } catch (Exception $e) {
     header('Location: ' . get_url() . '/site_err.php');
 	exit();

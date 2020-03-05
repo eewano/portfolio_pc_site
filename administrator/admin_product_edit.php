@@ -10,9 +10,7 @@ admin_login_register($_SESSION['admin_login']);
 
 $admin_name = $_SESSION['admin_name'];
 
-if (isset($_SESSION['err_message'])) {
-    $err_message = $_SESSION['err_message'];
-}
+$err_message = $_SESSION['err_message'];
 
 unset($_SESSION['err_message']);
 
