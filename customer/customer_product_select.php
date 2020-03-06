@@ -76,7 +76,7 @@ try {
             <li><a href="#">ログイン</a></li>
             <li class="cart_menu">
                 <a href="<?php echo get_url(); ?>/customer/customer_cart_look.php">カート</a>
-                <?php if (isset($_SESSION['cart']) == true): ?>
+                <?php if ($cart != null): ?>
                 <div class="cart_in_mark"></div>
                 <?php endif; ?>
             </li>
