@@ -112,6 +112,32 @@ button {
                 background-color: #bce8f5;
             }
         }
+
+        .cart_menu {
+            position: relative;
+
+            .cart_in_mark {
+                background-color: #ff1493;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                position: absolute;
+                top: 11px;
+                left: 80px;
+
+                @include mq(col-md) {
+                    top: 2px;
+                    left: 2px;
+                }
+
+                @include mq(col-lg) {
+                    width: 30px;
+                    height: 30px;
+                    top: -3px;
+                    left: -3px;
+                }
+            }
+        }
     }
 }
 
