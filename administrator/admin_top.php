@@ -104,15 +104,19 @@ try {
             <?php else: ?>
                 <img src="../img/<?php echo $rec['image']; ?>" alt="">
             <?php endif; ?>
-                <p class="product_name"><?php echo h01($rec['name']); ?></p>
-                <p class="product_price">¥ <?php echo h_price($rec['price']); ?></p>
-                <p class="product_evaluation"><?php echo h_evaluation($rec['evaluation']); ?></p>
-                <p class="product_review txt_hide"><?php echo h01($rec['detail']); ?></p>
-                <form action="<?php echo get_url(); ?>/administrator/admin_product_branch.php" method="post" class="button_area_double">
-                    <input type="hidden" name="product_id" value="<?php echo h01($rec['id']); ?>">
-                    <input type="submit" name="edit" class="btn_link modify" value="修正">
-                    <input type="submit" name="delete" class="btn_link delete" value="削除">
-                </form>
+                <div class="name_price_review">
+                    <p class="product_name"><?php echo h01($rec['name']); ?></p>
+                    <p class="product_price">¥ <?php echo h_price($rec['price']); ?></p>
+                    <p class="product_evaluation"><?php echo h_evaluation($rec['evaluation']); ?></p>
+                    <p class="product_review txt_hide"><?php echo h01($rec['detail']); ?></p>
+                </div>
+                <div class="button_area">
+                    <form action="<?php echo get_url(); ?>/administrator/admin_product_branch.php" method="post" class="button_area_double">
+                        <input type="hidden" name="product_id" value="<?php echo h01($rec['id']); ?>">
+                        <input type="submit" name="edit" class="btn_link modify" value="修正">
+                        <input type="submit" name="delete" class="btn_link delete" value="削除">
+                    </form>
+                </div>
             </div>
         <?php endwhile; ?>
         </div>
