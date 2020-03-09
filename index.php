@@ -106,10 +106,12 @@ try {
             <?php else: ?>
                 <img src="img/<?php echo $rec['image']; ?>" alt="">
             <?php endif; ?>
-                <p class="product_name"><?php echo h01($rec['name']); ?></p>
-                <p class="product_price">¥ <?php echo h_price($rec['price']); ?></p>
-                <p class="product_evaluation"><?php echo h_evaluation($rec['evaluation']); ?></p>
-                <p class="product_review txt_hide"><?php echo h01($rec['detail']); ?></p>
+                <div class="name_price_review">
+                    <p class="product_name"><?php echo h01($rec['name']); ?></p>
+                    <p class="product_price">¥ <?php echo h_price($rec['price']); ?></p>
+                    <p class="product_evaluation"><?php echo h_evaluation($rec['evaluation']); ?></p>
+                    <p class="product_review txt_hide"><?php echo h01($rec['detail']); ?></p>
+                </div>
             </a>
         <?php endwhile; ?>
         </div>
