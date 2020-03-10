@@ -1,0 +1,281 @@
+body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1200px) [mainEnd] minmax(20px, 1fr) [right];
+      grid-template-columns: [left] minmax(20px, 1fr) [mainStart] minmax(auto, 1200px) [mainEnd] minmax(20px, 1fr) [right];
+  -ms-grid-rows: [head] auto [head] auto [img] auto [admin] auto [title] auto [main] auto [foot] auto [bottom];
+      grid-template-rows: [head] auto [head] auto [img] auto [admin] auto [title] auto [main] auto [foot] auto [bottom];
+}
+
+.admin_mark_area {
+  -ms-grid-column: left;
+      grid-column-start: left;
+  grid-column-end: right;
+  -ms-grid-row: admin;
+      grid-row-start: admin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ff6b00;
+  height: 60px;
+  border: solid #000000;
+  border-width: 0px 2px 2px 2px;
+}
+
+@media screen and (min-width: 1200px) {
+  .admin_mark_area {
+    -ms-grid-column: mainStart;
+        grid-column-start: mainStart;
+    grid-column-end: mainEnd;
+  }
+}
+
+.admin_mark_area p {
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .admin_mark_area p {
+    font-size: 1.2rem;
+  }
+}
+
+.title_area {
+  -ms-grid-column: mainStart;
+      grid-column-start: mainStart;
+  grid-column-end: mainEnd;
+  -ms-grid-row: title;
+      grid-row-start: title;
+}
+
+.title_area h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 60px;
+}
+
+@media screen and (min-width: 576px) {
+  .title_area h2 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .title_area h2 {
+    font-size: 3rem;
+  }
+}
+
+.title_area h3 {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 60px;
+}
+
+@media screen and (min-width: 576px) {
+  .title_area h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .title_area h3 {
+    font-size: 2rem;
+  }
+}
+
+.title_area .login_err_message {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 60px;
+  color: #ff0000;
+}
+
+main {
+  -ms-grid-column: mainStart;
+      grid-column-start: mainStart;
+  grid-column-end: mainEnd;
+  -ms-grid-row: main;
+      grid-row-start: main;
+}
+
+main .product_list_area {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  grid-row-gap: 10px;
+  padding-top: 60px;
+}
+
+@media screen and (min-width: 576px) {
+  main .product_list_area {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  main .product_list_area {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+main .product_list_area .product_box {
+  border: 1px solid #000000;
+  padding: 10px;
+}
+
+@media screen and (min-width: 576px) {
+  main .product_list_area .product_box {
+    padding: 20px;
+  }
+}
+
+main .product_list_area .product_box img {
+  float: left;
+  width: 25%;
+  margin-right: 10px;
+}
+
+@media screen and (min-width: 576px) {
+  main .product_list_area .product_box img {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+main .product_list_area .product_box .name_price_review_area {
+  float: left;
+}
+
+@media screen and (min-width: 576px) {
+  main .product_list_area .product_box .name_price_review_area {
+    float: none;
+  }
+}
+
+main .product_list_area .product_box .name_price_review_area .product_name {
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 576px) {
+  main .product_list_area .product_box .name_price_review_area .product_name {
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+}
+
+main .product_list_area .product_box .name_price_review_area .product_price {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 576px) {
+  main .product_list_area .product_box .name_price_review_area .product_price {
+    font-size: 1rem;
+  }
+}
+
+main .product_list_area .product_box .name_price_review_area .product_evaluation {
+  color: #d6c429;
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 576px) {
+  main .product_list_area .product_box .name_price_review_area .product_evaluation {
+    font-size: 1rem;
+  }
+}
+
+main .product_list_area .product_box .name_price_review_area .product_review {
+  display: none;
+}
+
+@media screen and (min-width: 576px) {
+  main .product_list_area .product_box .name_price_review_area .product_review {
+    display: block;
+    margin-top: 20px;
+  }
+  main .product_list_area .product_box .name_price_review_area .product_review.txt_hide {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+}
+
+main .product_list_area .product_box .button_area {
+  clear: both;
+}
+
+main .product_list_area .product_box .button_area_double {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  grid-column-gap: 10px;
+}
+
+@media screen and (min-width: 576px) {
+  main .product_list_area .product_box .button_area_double {
+    grid-column-gap: 20px;
+  }
+}
+
+main .product_list_area .product_box .button_area_double .btn_link {
+  display: block;
+  width: 100%;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 10px;
+  margin-top: 10px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+main .product_list_area .product_box .button_area_double .btn_link:hover {
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 576px) {
+  main .product_list_area .product_box .button_area_double .btn_link {
+    font-size: 1rem;
+    margin-top: 20px;
+    padding: 10px 20px;
+  }
+}
+
+.btn_link.modify, .btn_link.return {
+  color: #ffffff;
+  background-color: #444444;
+}
+
+.btn_link.delete {
+  color: #ffffff;
+  background-color: #ff0000;
+}
+
+.btn_link.register {
+  color: #ffffff;
+  background-color: #0000ff;
+}
+/*# sourceMappingURL=admin_top.css.map */

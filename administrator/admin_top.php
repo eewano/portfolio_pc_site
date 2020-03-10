@@ -23,7 +23,7 @@ $admin_name = $_SESSION['admin_name'];
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/admin_common.css">
+    <link rel="stylesheet" href="../css/admin_top.css">
 </head>
 <body>
 
@@ -104,7 +104,7 @@ try {
             <?php else: ?>
                 <img src="../img/<?php echo $rec['image']; ?>" alt="">
             <?php endif; ?>
-                <div class="name_price_review">
+                <div class="name_price_review_area">
                     <p class="product_name"><?php echo h01($rec['name']); ?></p>
                     <p class="product_price">¥ <?php echo h_price($rec['price']); ?></p>
                     <p class="product_evaluation"><?php echo h_evaluation($rec['evaluation']); ?></p>

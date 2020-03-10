@@ -115,7 +115,7 @@ main .product_list_area {
       grid-template-columns: 1fr;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-  grid-row-gap: 10px;
+  grid-row-gap: 20px;
   padding-top: 60px;
 }
 
@@ -136,92 +136,38 @@ main .product_list_area {
 
 main .product_list_area .product_box {
   border: 1px solid #000000;
-  padding: 10px;
-}
-
-@media screen and (min-width: 576px) {
-  main .product_list_area .product_box {
-    padding: 20px;
-  }
+  padding: 20px;
 }
 
 main .product_list_area .product_box img {
-  float: left;
-  width: 25%;
-  margin-right: 10px;
+  width: 100%;
 }
 
-@media screen and (min-width: 576px) {
-  main .product_list_area .product_box img {
-    float: none;
-    width: 100%;
-    margin-right: 0;
-  }
+main .product_list_area .product_box .product_name {
+  font-size: 1.1rem;
+  margin-top: 20px;
 }
 
-main .product_list_area .product_box .name_price_review {
-  float: left;
-}
-
-@media screen and (min-width: 576px) {
-  main .product_list_area .product_box .name_price_review {
-    float: none;
-  }
-}
-
-main .product_list_area .product_box .name_price_review .product_name {
-  font-size: 0.8rem;
-}
-
-@media screen and (min-width: 576px) {
-  main .product_list_area .product_box .name_price_review .product_name {
-    font-size: 1.1rem;
-    margin-top: 10px;
-  }
-}
-
-main .product_list_area .product_box .name_price_review .product_price {
+main .product_list_area .product_box .product_price {
   color: #ff0000;
   font-weight: bold;
-  font-size: 0.8rem;
+  margin-top: 10px;
 }
 
-@media screen and (min-width: 576px) {
-  main .product_list_area .product_box .name_price_review .product_price {
-    font-size: 1rem;
-  }
-}
-
-main .product_list_area .product_box .name_price_review .product_evaluation {
+main .product_list_area .product_box .product_evaluation {
   color: #d6c429;
-  font-size: 0.8rem;
+  margin-top: 10px;
 }
 
-@media screen and (min-width: 576px) {
-  main .product_list_area .product_box .name_price_review .product_evaluation {
-    font-size: 1rem;
-  }
+main .product_list_area .product_box .product_review {
+  margin-top: 20px;
 }
 
-main .product_list_area .product_box .name_price_review .product_review {
-  display: none;
-}
-
-@media screen and (min-width: 576px) {
-  main .product_list_area .product_box .name_price_review .product_review {
-    display: block;
-    margin-top: 20px;
-  }
-  main .product_list_area .product_box .name_price_review .product_review.txt_hide {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-  }
-}
-
-main .product_list_area .product_box .button_area {
-  clear: both;
+main .product_list_area .product_box .product_review.txt_hide {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 main .product_list_area .product_box .button_area_double {
@@ -231,37 +177,23 @@ main .product_list_area .product_box .button_area_double {
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-  grid-column-gap: 10px;
-}
-
-@media screen and (min-width: 576px) {
-  main .product_list_area .product_box .button_area_double {
-    grid-column-gap: 20px;
-  }
+  grid-column-gap: 20px;
 }
 
 main .product_list_area .product_box .button_area_double .btn_link {
   display: block;
+  margin-top: 20px;
   width: 100%;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: bold;
   text-align: center;
-  padding: 5px 10px;
-  margin-top: 10px;
+  padding: 10px 20px;
   text-decoration: none;
   border-radius: 4px;
 }
 
 main .product_list_area .product_box .button_area_double .btn_link:hover {
   opacity: 0.5;
-}
-
-@media screen and (min-width: 576px) {
-  main .product_list_area .product_box .button_area_double .btn_link {
-    font-size: 1rem;
-    margin-top: 20px;
-    padding: 10px 20px;
-  }
 }
 
 main .product_pickup_area {
@@ -273,92 +205,38 @@ main .product_pickup_area {
 
 main .product_pickup_area .product_box {
   border: 1px solid #000000;
-  padding: 10px;
-}
-
-@media screen and (min-width: 576px) {
-  main .product_pickup_area .product_box {
-    padding: 20px;
-  }
+  padding: 20px;
 }
 
 main .product_pickup_area .product_box img {
-  float: left;
-  width: 25%;
-  margin-right: 10px;
+  width: 100%;
 }
 
-@media screen and (min-width: 576px) {
-  main .product_pickup_area .product_box img {
-    float: none;
-    width: 100%;
-    margin-right: 0;
-  }
+main .product_pickup_area .product_box .product_name {
+  font-size: 1.1rem;
+  margin-top: 20px;
 }
 
-main .product_pickup_area .product_box .name_price_review {
-  float: left;
-}
-
-@media screen and (min-width: 576px) {
-  main .product_pickup_area .product_box .name_price_review {
-    float: none;
-  }
-}
-
-main .product_pickup_area .product_box .name_price_review .product_name {
-  font-size: 0.8rem;
-}
-
-@media screen and (min-width: 576px) {
-  main .product_pickup_area .product_box .name_price_review .product_name {
-    font-size: 1.1rem;
-    margin-top: 10px;
-  }
-}
-
-main .product_pickup_area .product_box .name_price_review .product_price {
+main .product_pickup_area .product_box .product_price {
   color: #ff0000;
   font-weight: bold;
-  font-size: 0.8rem;
+  margin-top: 10px;
 }
 
-@media screen and (min-width: 576px) {
-  main .product_pickup_area .product_box .name_price_review .product_price {
-    font-size: 1rem;
-  }
-}
-
-main .product_pickup_area .product_box .name_price_review .product_evaluation {
+main .product_pickup_area .product_box .product_evaluation {
   color: #d6c429;
-  font-size: 0.8rem;
+  margin-top: 10px;
 }
 
-@media screen and (min-width: 576px) {
-  main .product_pickup_area .product_box .name_price_review .product_evaluation {
-    font-size: 1rem;
-  }
+main .product_pickup_area .product_box .product_review {
+  margin-top: 20px;
 }
 
-main .product_pickup_area .product_box .name_price_review .product_review {
-  display: none;
-}
-
-@media screen and (min-width: 576px) {
-  main .product_pickup_area .product_box .name_price_review .product_review {
-    display: block;
-    margin-top: 20px;
-  }
-  main .product_pickup_area .product_box .name_price_review .product_review.txt_hide {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-  }
-}
-
-main .product_pickup_area .product_box .button_area {
-  clear: both;
+main .product_pickup_area .product_box .product_review.txt_hide {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 main .product_pickup_area .button_area_double {
@@ -368,13 +246,7 @@ main .product_pickup_area .button_area_double {
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-  grid-column-gap: 10px;
-}
-
-@media screen and (min-width: 576px) {
-  main .product_pickup_area .button_area_double {
-    grid-column-gap: 20px;
-  }
+  grid-column-gap: 20px;
 }
 
 main .product_pickup_area .button_area_double .btn_link {
@@ -389,25 +261,16 @@ main .product_pickup_area .button_area_double .btn_link {
           justify-content: center;
   margin-top: 60px;
   width: 100%;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: bold;
   text-align: center;
-  padding: 5px 10px;
-  margin-top: 10px;
+  padding: 10px 20px;
   text-decoration: none;
   border-radius: 4px;
 }
 
 main .product_pickup_area .button_area_double .btn_link:hover {
   opacity: 0.5;
-}
-
-@media screen and (min-width: 576px) {
-  main .product_pickup_area .button_area_double .btn_link {
-    font-size: 1rem;
-    margin-top: 20px;
-    padding: 10px 20px;
-  }
 }
 
 main .input_area {
@@ -456,11 +319,6 @@ main .input_area .input_space {
   main .input_area .input_space {
     height: 40px;
   }
-  main .input_area .input_space:after {
-    content: '';
-    display: block;
-    clear: both;
-  }
 }
 
 main .input_area .input_space.type_detail {
@@ -476,14 +334,8 @@ main .input_area .button_area_double {
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-  grid-column-gap: 10px;
+  grid-column-gap: 20px;
   margin-top: 60px;
-}
-
-@media screen and (min-width: 576px) {
-  main .input_area .button_area_double {
-    grid-column-gap: 20px;
-  }
 }
 
 main .input_area .button_area_double .btn_link {
@@ -497,25 +349,16 @@ main .input_area .button_area_double .btn_link {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: bold;
   text-align: center;
-  padding: 5px 10px;
-  margin-top: 10px;
+  padding: 10px 20px;
   text-decoration: none;
   border-radius: 4px;
 }
 
 main .input_area .button_area_double .btn_link:hover {
   opacity: 0.5;
-}
-
-@media screen and (min-width: 576px) {
-  main .input_area .button_area_double .btn_link {
-    font-size: 1rem;
-    margin-top: 20px;
-    padding: 10px 20px;
-  }
 }
 
 main .other_area {
@@ -528,25 +371,16 @@ main .other_area {
 main .other_area .btn_link {
   display: block;
   width: 100%;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: bold;
   text-align: center;
-  padding: 5px 10px;
-  margin-top: 10px;
+  padding: 10px 20px;
   text-decoration: none;
   border-radius: 4px;
 }
 
 main .other_area .btn_link:hover {
   opacity: 0.5;
-}
-
-@media screen and (min-width: 576px) {
-  main .other_area .btn_link {
-    font-size: 1rem;
-    margin-top: 20px;
-    padding: 10px 20px;
-  }
 }
 
 .btn_link.modify, .btn_link.return {
